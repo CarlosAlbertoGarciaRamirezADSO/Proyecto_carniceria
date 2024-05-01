@@ -1,0 +1,41 @@
+:root{
+    --bag_white:#ffff;
+    --font:"Oswald", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+.encabezado__principal{
+    text-align: center;
+    padding: 30px;
+    background-color: brown;
+    color: var(--bag_white);
+    font-family: var(--font);
+}
+.login__usuario{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.login__card{
+    margin: 20px;
+    width: 45%;
+    background-color: var(--bag_white);
+}
+.title__usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    height: 15%;
+    font-family: var(--bag_white);
+    background-color: brown;
+}

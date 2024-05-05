@@ -1,6 +1,9 @@
 :root{
     --bag_white:#ffff;
     --font:"Oswald", sans-serif;
+    --hover_btn:rgb(247, 53, 53);
+    --color_carne:brown;
+    --color_fondo:rgb(229, 229, 229);
 }
 
 *{
@@ -11,31 +14,65 @@
 
 .encabezado__principal{
     text-align: center;
-    padding: 30px;
-    background-color: brown;
+    padding: 10px;
+    background-color: var(--color_carne);
     color: var(--bag_white);
     font-family: var(--font);
 }
 .login__usuario{
     display: flex;
     justify-content: center;
-    background-color: green;
+    background-color: var(--color_fondo);
     height: 100vh;
     width: 100%;
 }
-
-
 .login__card{
     margin: 20px;
-    width: 45%;
+    border-radius: 15px;
+    width: 35%;
     background-color: var(--bag_white);
 }
 .title__usuario{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
-    height: 15%;
+    font-size: 30px;
+    height: 10%;
     font-family: var(--bag_white);
-    background-color: brown;
+    background-color: var(--color_carne);
+    margin-bottom: 50px;
+}
+
+
+.links__usuario{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content__btn{
+    display: flex;  
+    height: 80px;
+}
+.content__btn button{
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+.content__btn button:hover{
+    width: 50%;
+    background-color: var(--hover_btn);
+}
+.mb-3{
+    margin-top: 40px;
+}
+.btn__ingresar{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.btn__ingresar button{
+    width: 28%;
+    margin-top: 100px;
 }

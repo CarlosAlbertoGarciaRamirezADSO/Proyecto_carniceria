@@ -1,78 +1,96 @@
-:root{
-    --bag_white:#ffff;
-    --font:"Oswald", sans-serif;
-    --hover_btn:rgb(247, 53, 53);
-    --color_carne:brown;
-    --color_fondo:rgb(229, 229, 229);
+:root {
+  --bag_white: #ffff;
+  --font: "Oswald", sans-serif;
+  --hover_btn: #f73535;
+  --color_carne: #a52a2a;
+  --color_fondo: rgb(229, 229, 229);
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.encabezado__principal{
-    text-align: center;
-    padding: 10px;
-    background-color: var(--color_carne);
-    color: var(--bag_white);
-    font-family: var(--font);
-}
-.login__usuario{
-    display: flex;
-    justify-content: center;
-    background-color: var(--color_fondo);
-    height: 100vh;
-    width: 100%;
-}
-.login__card{
-    margin: 20px;
-    border-radius: 15px;
-    width: 35%;
-    background-color: var(--bag_white);
-}
-.title__usuario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    height: 10%;
-    font-family: var(--bag_white);
-    background-color: var(--color_carne);
-    margin-bottom: 50px;
+.encabezado__principal {
+  display: block;
+  text-align: center;
+  background-color: var(--color_carne);
+  color: var(--bag_white);
+  padding: 20px;
+  position: fixed;
+  width: 100%;
 }
 
-
-.links__usuario{
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
+.login__usuario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color_fondo);
 }
 
-.content__btn{
-    display: flex;  
-    height: 80px;
+.login__card {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bag_white);
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px rgba(29, 29, 29, 0.2);
+  overflow: hidden;
 }
-.content__btn button{
-    width: 50%;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
+
+.title__usuario {
+  background-color: var(--color_carne);
+  color: var(--bag_white);
+  padding: 20px;
+  text-align: center;
 }
-.content__btn button:hover{
-    width: 50%;
-    background-color: var(--hover_btn);
+
+.content__login {
+  padding: 20px;
+  width: 100%;
 }
-.mb-3{
-    margin-top: 40px;
+
+.content__btn {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
-.btn__ingresar{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+
+.content__btn button {
+  padding: 10px 20px;
+  width: 50%;
+  max-width: auto;
+  border: none;
+  outline: none;
+  border-radius: 7px;
 }
-.btn__ingresar button{
-    width: 28%;
-    margin-top: 100px;
+
+.form {
+  width: 100%;
+  margin-top: 20px;
+}
+.form input {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid rgba(29, 29, 29, 0.2);
+  margin-bottom: 10px;
+}
+
+.links__usuario {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form__button {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  background-color: var(--color_carne);
+  padding: 10px 20px;
+  color: var(--bag_white);
 }

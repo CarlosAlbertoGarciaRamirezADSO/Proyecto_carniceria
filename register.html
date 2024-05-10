@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- <script src="tailwind.config.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <header class="encabezado__principal">
+        <h1 class=" text-black bg-red-800 text-center fixed w-full block p-5">CARNES SAN PABLO</h1>
+    </header>
+    
+    <section class="flex items-center justify-center min-h-screen bg-neutral-200">
+        <article class=" bg-white w-full max-w-md">
+        <div class=" bg-red-800 text-white p-5 text-center ">Registro</div>
+        <div class=" p-5 flex flex-col">
+            <form action="" class="form w-full">
+                <label for="nombre_usuario" class="">Nombre de usuario</label>
+                <br>
+                <input type="email" class="w-full py-5 rounded-md border-black border-b-2 bg-transparent" id="nombre_usuario" placeholder="Ingrese su nombre de usuario" />
+                <br />
+
+                <label for="contraseña1" class="">Contraseña</label>
+                <br />
+                <input type="password" id="contraseña1" class="w-full" placeholder="Ingrese su contraseña" />
+                <br>
+
+                <label for="contraseña2" class="">Vuelva y ingrese la Contraseña</label>
+                <br />
+                <input type="password" id="contraseña2" class="w-full" placeholder="Ingrese su contraseña" />
+                
+                <div class="links__usuario">
+                    <a href="">¿Olvidaste la contraseña?</a>
+                    <a href="">Crear usuario</a>
+                </div>
+                <button type="button" class="form__button ">Ingresar</button>
+            </form>
+        </div>
+        </article>
+    </section>
+</body>
+</html>

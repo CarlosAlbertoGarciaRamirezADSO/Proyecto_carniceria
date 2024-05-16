@@ -15,29 +15,48 @@
     </header>
     
     <section class="flex items-center justify-center min-h-screen bg-neutral-200">
-        <article class=" bg-white w-full max-w-md">
-        <div class=" bg-red-800 text-white p-5 text-center ">Registro</div>
+        <article class=" bg-white w-full max-w-md mt-12">
+        <div class=" bg-red-800 text-white p-5 text-center rounded-t-md">Registro</div>
         <div class=" p-5 flex flex-col">
             <form action="" class="form w-full">
                 <label for="nombre_usuario" class="">Nombre de usuario</label>
                 <br>
-                <input type="email" class="w-full py-5 rounded-md border-black border-b-2 bg-transparent" id="nombre_usuario" placeholder="Ingrese su nombre de usuario" />
+                <input type="text" class="w-full py-2 rounded-md border-r-zinc-500 border-2 bg-transparent" id="nombre_usuario" placeholder="Ingrese su nombre de usuario" />
                 <br />
+                
+
+                <label for="correo" class="">Correo electronico</label>
+                <br />
+                <input type="email" id="correo" class="w-full py-2 rounded-md border-r-zinc-500 border-2 bg-transparent" placeholder="Ingrese su contraseña" />
+                <br>
+                
 
                 <label for="contraseña1" class="">Contraseña</label>
                 <br />
-                <input type="password" id="contraseña1" class="w-full" placeholder="Ingrese su contraseña" />
+                <input type="password" id="contraseña1" class="w-full py-2 rounded-md border-r-zinc-500 border-2 bg-transparent" placeholder="Ingrese su contraseña" />
                 <br>
+                
 
                 <label for="contraseña2" class="">Vuelva y ingrese la Contraseña</label>
                 <br />
-                <input type="password" id="contraseña2" class="w-full" placeholder="Ingrese su contraseña" />
+                <input type="password" id="contraseña2" class="w-full py-2 rounded-md border-r-zinc-500 border-2 bg-transparent" placeholder="Ingrese su contraseña" />
+                <br>
+                <br>
                 
-                <div class="links__usuario">
+
+                <label for="selec" class="">Escoge el rol</label><br>
+                <select name="roles" id="rol" class="border-2  border-r-zinc-500">
+                    <option value="select">Seleccionar</option>
+                    <option value="empleado">Empleado</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+
+                <div class="links__usuario my-7 flex justify-between">
                     <a href="">¿Olvidaste la contraseña?</a>
-                    <a href="">Crear usuario</a>
+                    <a href="index.html">Volver</a>
                 </div>
-                <button type="button" class="form__button ">Ingresar</button>
+
+                <button type="button" class="form__button bg-red-800 w-full p-2 rounded-md text-white ">Registrar</button>
             </form>
         </div>
         </article>

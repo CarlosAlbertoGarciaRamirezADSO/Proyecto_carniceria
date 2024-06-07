@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bag_white: #ffff;
   --font: "Oswald", sans-serif;
   --hover_btn: #f73535;
@@ -10,8 +10,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
+} */
+/* 
 .encabezado__principal {
   display: block;
   text-align: center;
@@ -93,4 +93,4 @@
   background-color: var(--color_carne);
   padding: 10px 20px;
   color: var(--bag_white);
-}
+} */

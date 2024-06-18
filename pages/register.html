@@ -16,48 +16,27 @@
     </header>
     
     <section class="flex items-center justify-center min-h-screen bg-neutral-200">
-        <article class=" bg-white w-full max-w-md mt-12">
-        <div class=" bg-red-800 text-white p-5 text-center rounded-t-md">Registro</div>
+        <article class=" bg-white w-full max-w-md mt-12 rounded-lg ">
+        <div class=" bg-color_carne text-bag_white p-5 text-center text-lg rounded-t-xl ">Registro</div>
         <div class=" p-5 flex flex-col">
             <form action="" class="form w-full">
-                <label for="nombre_usuario" class="">Nombre de usuario</label>
-                <br>
-                <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" id="nombre_usuario" placeholder="Ingrese su nombre de usuario" />
-                <br />
-                
 
                 <label for="correo" class="">Correo electronico</label>
-                <br />
                 <input type="email" id="correo" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" placeholder="Ingrese su contraseña" />
-                <br>
-                
 
                 <label for="contraseña1" class="mb-5">Contraseña</label>
-                <br />
                 <input type="password" id="contraseña1" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" placeholder="Ingrese su contraseña" />
-                <br>
-                
 
                 <label for="contraseña2" class="">Vuelva y ingrese la Contraseña</label>
-                <br />
-                <input type="password" id="contraseña2" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" placeholder="Ingrese su contraseña" />
-                <br>
-                <br>
-                
+                <input type="password" id="contraseña2" class="w-full py-2.5 px-5 rounded-lg mb-5 border border-gris" placeholder="Ingrese su contraseña" />
 
-                <label for="selec" class="">Escoge el rol</label><br>
-                <select name="roles" id="rol" class="border-2  border-r-zinc-500">
-                    <option value="select">Seleccionar</option>
-                    <option value="empleado">Empleado</option>
-                    <option value="administrador">Administrador</option>
-                </select>
 
-                <div class="links__usuario my-7 flex justify-between">
-                    <a href="">¿Olvidaste la contraseña?</a>
-                    <a href="../index.html">Volver</a>
+                <div class="links__usuario mb-5 flex justify-between ">
+                    <a href="" class="hover:text-rojo_oscuro">¿Olvidaste la contraseña?</a>
+                    <a href="../index.html" class="hover:text-rojo_oscuro">Volver</a>
                 </div>
 
-                <button type="button" class="form__button bg-red-800 w-full p-2 rounded-md text-white ">Registrar</button>
+                <button type="button" class="form__button py-2.5 px-5 bg-inter w-full max-w-50 rounded-lg text-bag_white hover:bg-color_carne">Registrar</button>
             </form>
         </div>
         </article>

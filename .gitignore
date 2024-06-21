@@ -1,5 +1,5 @@
 node_modules
-.vscode
+.vscode/
 input.css
 output.css
 package-lock.json

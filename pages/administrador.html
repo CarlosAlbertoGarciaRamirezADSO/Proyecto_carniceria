@@ -27,9 +27,9 @@
           <!-- <button class="py-2.5 px-5 w-2/4 max-w-screen rounded-lg hover:bg-rojo_claro/80">
             <a href="../index.html">Empleado</a>
           </button> -->
-          <a class="py-2.5 px-5 hover:bg-rojo_claro/80 w-2/4 max-w-screen rounded-lg text-center"
+          <a class="py-2.5 px-5 border-color_carne hover:border w-2/4 max-w-screen rounded-lg text-center"
             href="../index.html">Empleado</a>
-          <button class="py-2.5 px-5 bg-inter hover:bg-rojo_oscuro w-2/4 max-w-screen rounded-lg">Administrador</button>
+          <button class="py-2.5 px-5 border-color_carne border-b-2 w-2/4 max-w-screen ">Administrador</button>
         </div>
         <form action="" class="form w-full mt-5">
           <label for="" class="">Administrador</label>
@@ -43,13 +43,13 @@
           <input type="password" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris "
             placeholder="Ingrese su contraseña" />
 
-          <div class="flex justify-between mb-5">
-            <a href="recuperarpassword.html" class="hover:text-rojo_oscuro">¿Olvidaste la contraseña?</a>
-            <a href="register.html" class="hover:text-rojo_oscuro">Crear usuario</a>
+          <div class="grid grid-rows-2 grid-cols-3">
+            <a href="recuperarpassword.html" class="hover:text-rojo_oscuro grid col-span-2">¿Olvidaste la contraseña?</a>
+            <a href="register.html" class="hover:text-rojo_oscuro grid col-start-3 text-end ">Crear usuario</a>
+            <button type="button"
+              class="grid row-start-2 col-start-2 py-2.5 px-5 bg-inter max-w-50 rounded-lg text-bag_white hover:bg-color_carne">Ingresar</button>
           </div>
-          
-          <button type="button"
-            class=" py-2.5 px-5 bg-inter w-full max-w-50 rounded-lg text-bag_white hover:bg-color_carne">Ingresar</button>
+
         </form>
       </div>
     </article>

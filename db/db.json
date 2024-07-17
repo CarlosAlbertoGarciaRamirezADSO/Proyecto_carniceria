@@ -1,0 +1,13 @@
+{
+    "posts": [
+    { "id": 1, "title": "Hello World", "author": "John Doe" },
+    { "id": 1, "title": "Hello World", "author": "John Doe" },
+    { "id": 1, "title": "Hello World", "author": "John Doe" },
+    { "id": 1, "title": "Hello World", "author": "John Doe" },
+    { "id": 1, "title": "Hello World", "author": "John Doe" }   
+    ],
+    "comments": [
+    { "id": 1, "body": "Some comment", "postId": 1 }
+    ],
+    "profile": { "name": "John Doe" }
+}

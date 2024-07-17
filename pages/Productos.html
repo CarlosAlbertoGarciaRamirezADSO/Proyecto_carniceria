@@ -6,21 +6,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="style.css" />
 <link href="../output.css" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <title>Carnes San pablo</title>
 </head>
 
 <body class="min-h-screen">
 <header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
+    <div class="md:hidden">
+        <i class='bx bx-menu' id="iconmenu"></i>
+    </div>
     <h1 class="block">CARNES SAN PABLO</h1>
     <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
 </header>
 <section class=" flex min-h-screen bg-color_fondo p-3">
     <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full ">
-    <div class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:hidden">
+    
+    <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:mt-5 max-md:inset-x-0 max-md:inset-y-1 max-md:bg-color_carne max-md:flex-col max-md:items-center max-md:w-2/4 max-md:h-full ">
         <a href="" class="py-2.5 px-10 border border-border_rose bg-color_carne text-bag_white rounded-lg">PRODUCTOS</a>
         <a href="../pages/inventario.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">INVENTARIO</a>
         <a href="../pages/historial.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">HISTORIAL DE PEDIDOS</a>
     </div>
+
 
     <div class=" min-h-full grid grid-cols-2  max-md:grid-cols-none">
     <div class="flex border border-x-border_rose bg-rojo_claro flex-col">
@@ -89,6 +96,7 @@
 
     </article>
 </section>
+<script src="../scripts/menu.js"></script>
 </body>
 
 </html> 

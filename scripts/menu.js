@@ -7,6 +7,4 @@ let noMenu = ()=>{
     menu.classList.toggle("max-md:hidden")
 
 }
-
-
 icon.addEventListener("click", noMenu)

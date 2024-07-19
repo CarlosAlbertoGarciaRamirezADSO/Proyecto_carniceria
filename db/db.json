@@ -1,13 +1,19 @@
 {
-    "posts": [
-    { "id": 1, "title": "Hello World", "author": "John Doe" },
-    { "id": 1, "title": "Hello World", "author": "John Doe" },
-    { "id": 1, "title": "Hello World", "author": "John Doe" },
-    { "id": 1, "title": "Hello World", "author": "John Doe" },
-    { "id": 1, "title": "Hello World", "author": "John Doe" }   
-    ],
-    "comments": [
-    { "id": 1, "body": "Some comment", "postId": 1 }
-    ],
-    "profile": { "name": "John Doe" }
+    "Users": [
+    { 
+        "id_rol": 1, 
+        "usuario": "superadmin", 
+        "contraseña": "123" 
+    },
+    { 
+        "id_rol": 2, 
+        "usuario": "admin", 
+        "contraseña": "123" 
+    },{ 
+        "id_rol": 3, 
+        "usuario": "empleado", 
+        "contraseña": "123" 
+    }
+    ]
+
 }

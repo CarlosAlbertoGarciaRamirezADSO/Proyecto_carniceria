@@ -25,11 +25,50 @@
       <div class="p-5 text-center text-lg border flex border-color_carne  max-md:flex-wrap">
         <h1 class="text-4xl m-2">INVENTARIO</h1>
         <div class="flex justify-start w-full ">
-          <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">agregar</button>
+          <button id="agregar" class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">agregar</button>
           <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">eliminar</button>
           <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">modificar</button>
         </div>
       </div>
+
+      <div class="modal fixed inset-x-0 inset-y-0 flex hidden">
+        <div class="modal_container w-5/6 m-auto max-w-2xl max-h-full  rounded-lg bg-gris flex items-center flex-col">
+          <div class="flex justify-between items-center w-full bg-color_carne rounded-t-lg">
+            <h1 class="text-3xl text-bag_white ">Agregar</h1>
+            <button class="p-2 m-2 hover:bg-bag_white hover:text-bag_black text-bag_white rounded-lg" id="cerrar">X</button>
+          </div>
+          <div class="formulario p-5">
+            <form action="" id="form" method="post" >
+              
+              
+              <label for="" class="">ID</label>
+              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+    
+              <label for="" class="">NOMBRE</label>
+              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" >
+    
+              
+              <label for="" class="">FECHA VENCIMIENTO</label>
+              <input type="date" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+    
+              <label for="" class="">PESO TOTAL EN GRAMOS</label>
+              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+    
+              <label for="" class="">PRECIO X LIBRA</label>
+              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+
+              <div class="flex justify-center ">
+                <input type="submit" class=" w-3/6 m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg "></input>
+              </div>
+    
+            </form>
+    
+          </div>
+
+        </div>
+      </div>
+
+
       <div class="p-2">
         <table class="border-2 border-gris_oscuro min-w-full mt-2 text-center">
           <thead>
@@ -63,6 +102,7 @@
       
     </article>
   </section>
+  <script src="../scripts/agregar.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./**/*.{html,js}"],
+tailwind.config = {
   theme: {
     extend: {
       colors: {
@@ -16,10 +14,7 @@ module.exports = {
         gris_oscuro: '#404040',
         inter: '#c94242',
         border_rose:'#f43f5e'
-
       }
-    },
-  },
-  plugins: [],
+    }
+  }
 }
-

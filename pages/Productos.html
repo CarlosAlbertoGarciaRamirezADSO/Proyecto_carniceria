@@ -31,71 +31,58 @@
     </div>
 
 
-    <div class=" min-h-full grid grid-cols-2  max-md:grid-cols-none">
-    <div class="flex border border-x-border_rose  flex-col">
-        <div class="bg-bag_white p-5 flex flex-wrap justify-around max-lg:bg-white ">
-        <a href="" class="py-2.5 m-2 px-10 border border-border_rose bg-color_carne text-bag_white rounded-lg ">RES</a>
-        <a href="../pages/productoc.html"
-            class="py-2.5 m-2 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">CERDO</a>
-        <a href="../pages/productop.html"
-            class="py-2.5 m-2 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">POLLO</a>
-        <a href="../pages/productoso.html"
-            class="py-2.5 m-2 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">OTROS</a>
-        </div>
-        <h1 class="text-bag_white text-3xl text-center">RES</h1>
-        <div class=" p-5 text-center">
-            <button class="bg-gris py-2.5 px-10 rounded-lg h-auto hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
-            <button class="bg-gris py-2.5 px-10 rounded-lg  hover:bg-bag_black hover:text-bag_white m-2">boton</button>
+    <div class="bg-gris min-h-full ">
+        <div class="bg-white p-5 mb-2">
+            <h1 class="text-4xl font-bold text-black mb-6 text-center">Productos</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex flex-col">
+                    <label for="id1" class="mb-2 text-lg font-medium text-black">ID</label>
+                    <input type="text" id="id1" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="product-name" class="mb-2 text-lg font-medium text-black">NOMBRE PRODUCTO</label>
+                    <input type="text" id="product-name" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="id2" class="mb-2 text-lg font-medium text-black">PRECIO X LIBRA</label>
+                    <input type="text" id="id2" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="id3" class="mb-2 text-lg font-medium text-black">PESO EN GRAMOS</label>
+                    <input type="text" id="id3" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+            </div>
+            <div class="w-full flex justify-center mt-6">
+                <button id="agregar" class="py-2 px-6 bg-color_carne text-white font-semibold rounded-lg ">Agregar</button>
             </div>
         </div>
-
-        <div class="">
-            <div class="p-2">
-                <table class="border-2 border-gris_oscuro min-w-full mt-2 text-center">
-                <thead>
-                    <tr class="border-2 border-gris_claro">
-                    <th class="border-2 border-gris_claro">No</th>
-                    <th class="border-2 border-gris_claro">nombre</th>
-                    <th>correo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td class="border-2 border-gris_claro">1</td>
-                    <td class="border-2 border-gris_claro">carlos</td>
-                    <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-                    </tr>
-                
-                    <tr>
-                    <td class="border-2 border-gris_claro">1</td>
-                    <td class="border-2 border-gris_claro">carlos</td>
-                    <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-                    </tr>
-                
-                    <tr>
-                    <td class="border-2 border-gris_claro">1</td>
-                    <td class="border-2 border-gris_claro">carlos</td>
-                    <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-                    </tr>
-                </tbody>
+        
+        
+        <div class="bg-white p-6  max-w-screen mx-auto">
+            <div class="p-2 max-h-96 overflow-y-scroll">
+                <table class=" border-collapse w-full text-center">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-3 border border-gray-300">ID</th>
+                            <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
+                            <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
+                            <th class="p-3 border border-gray-300">PESO EN GRAMOS</th>
+                            <th class="p-3 border border-gray-300">PRECIO TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white hover:bg-gray-100">
+                            <td class="p-3 border border-gray-300">1</td>
+                            <td class="p-3 border border-gray-300">Carlos</td>
+                            <td class="p-3 border border-gray-300">carlos@gmail.com</td>
+                            <td class="p-3 border border-gray-300">20.000</td>
+                            <td class="p-3 border border-gray-300">50.000</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
-
-        </div>
+        </div>  
     </div>
-
     </article>
 </section>
 <script src="../scripts/menu.js"></script>

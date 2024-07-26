@@ -8,73 +8,103 @@
 <!-- <link href="../output.css" rel="stylesheet"> -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="../tailwind.config.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <title>Carnes San pablo</title>
 </head>
 
 <body class="min-h-screen">
-<header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
-    <h1 class="block">CARNES SAN PABLO</h1>
-    <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
-</header>
+    <header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
+        <div class="md:hidden">
+            <i class='bx bx-menu' id="iconmenu"></i>
+        </div>
+        <h1 class="block">CARNES SAN PABLO</h1>
+        <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
+    </header>
+
 <section class=" flex min-h-screen  bg-color_fondo p-3">
     <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full">
-    <div class="p-5 text-center text-lg flex justify-around flex-wrap border border-color_carne rounded-t-lg ">
+    <!-- <div class="p-5 text-center text-lg flex justify-around flex-wrap border border-color_carne rounded-t-lg ">
         <a href="../pages/Productos.html" class="py-2.5 m-2 px-10 border border-border_rose rounded-lg hover:bg-color_carne hover:text-bag_white">PRODUCTOS</a>
         <a href="../pages/inventario.html" class="py-2.5 px-10 m-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">INVENTARIO</a>
         <a href="" class="py-2.5 px-10 m-2 border border-border_rose bg-color_carne text-bag_white rounded-lg">HISTORIAL DE PEDIDOS</a>
+    </div> -->
+    
+    <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
+        <a href="../pages/Productos.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white ">PRODUCTOS</a>
+        <a href="../pages/inventario.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">INVENTARIO</a>
+        <a href="" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:bg-bag_white max-md:border-bag_white">HISTORIAL DE PEDIDOS</a>
+    </div>
+
+    <div class="bg-white p-6 shadow-lg max-w-screen mx-auto">
+        <div class="p-2 max-h-96 overflow-y-scroll">
+            <table class="border-collapse w-full text-center shadow-lg">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-3 border border-gray-300">No</th>
+                        <th class="p-3 border border-gray-300">Nombre</th>
+                        <th class="p-3 border border-gray-300">Correo</th>
+                        <th class="p-3 border border-gray-300">Factura</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">1</td>
+                        <td class="p-3 border border-gray-300">Carlos</td>
+                        <td class="p-3 border border-gray-300">carlos@gmail.com</td>
+                        <td class="p-3 border border-gray-300">
+                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">2</td>
+                        <td class="p-3 border border-gray-300">Ana</td>
+                        <td class="p-3 border border-gray-300">ana@gmail.com</td>
+                        <td class="p-3 border border-gray-300">
+                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-white hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">3</td>
+                        <td class="p-3 border border-gray-300">Luis</td>
+                        <td class="p-3 border border-gray-300">luis@gmail.com</td>
+                        <td class="p-3 border border-gray-300">
+                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">4</td>
+                        <td class="p-3 border border-gray-300">Marta</td>
+                        <td class="p-3 border border-gray-300">marta@gmail.com</td>
+                        <td class="p-3 border border-gray-300">
+                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-white hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">5</td>
+                        <td class="p-3 border border-gray-300">Juan</td>
+                        <td class="p-3 border border-gray-300">juan@gmail.com</td>
+                        <td class="p-3 border border-gray-300">
+                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
+                        </td>
+                    </tr>
+                    <tr class="bg-white hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">5</td>
+                        <td class="p-3 border border-gray-300">Juan</td>
+                        <td class="p-3 border border-gray-300">juan@gmail.com</td>
+                        <td class="p-3 border border-gray-300">
+                            <button class="bg-color_carne text-white rounded-lg p-2">Mostrar</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
     </div>
     
-    <div class="p-2">
-        <table class="border-2 border-gris_oscuro min-w-full mt-2 text-center">
-        <thead>
-            <tr class="border-2 border-gris_claro">
-            <th class="border-2 border-gris_claro">No</th>
-            <th class="border-2 border-gris_claro">nombre</th>
-            <th>correo</th>
-            <th class="border-2 border-gris_claro">factura</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td class="border-2 border-gris_claro">1</td>
-            <td class="border-2 border-gris_claro">carlos</td>
-            <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-            <td class="border-2 border-gris_claro"><button class="bg-color_carne rounded-lg p-2">Mostrar</button></td>
-            </tr>
-        
-            <tr>
-            <td class="border-2 border-gris_claro">1</td>
-            <td class="border-2 border-gris_claro">carlos</td>
-            <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-            <td class="border-2 border-gris_claro"><button class="bg-color_carne rounded-lg p-2">Mostrar</button></td>
-            </tr>
-        
-            <tr>
-            <td class="border-2 border-gris_claro">1</td>
-            <td class="border-2 border-gris_claro">carlos</td>
-            <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-            <td class="border-2 border-gris_claro"><button class="bg-color_carne rounded-lg p-2">Mostrar</button></td>
-            </tr>
-
-            <tr>
-                <td class="border-2 border-gris_claro">1</td>
-                <td class="border-2 border-gris_claro">carlos</td>
-                <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-                <td class="border-2 border-gris_claro"><button class="bg-color_carne rounded-lg p-2">Mostrar</button></td>
-                </tr>
-
-                <tr>
-                    <td class="border-2 border-gris_claro">1</td>
-                    <td class="border-2 border-gris_claro">carlos</td>
-                    <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-                    <td class="border-2 border-gris_claro"><button class="bg-color_carne rounded-lg p-2">Mostrar</button></td>
-                    </tr>
-        </tbody>
-        </table>
-    </div>
     
     </article>
 </section>
+<script src="../scripts/menu.js"></script>
 </body>
 
 </html>

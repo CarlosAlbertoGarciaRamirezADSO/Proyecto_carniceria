@@ -8,20 +8,32 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../tailwind.config.js"></script>
   <title>Carnes San pablo</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="min-h-screen">
   <header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
+    <div class="md:hidden">
+        <i class='bx bx-menu' id="iconmenu"></i>
+    </div>
     <h1 class="block">CARNES SAN PABLO</h1>
     <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
 </header>
   <section class=" flex min-h-screen  bg-color_fondo p-3">
     <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full">
-      <div class="p-5 text-center text-lg flex justify-around flex-wrap border border-color_carne rounded-t-lg ">
+      
+      <!-- <div class="p-5 text-center text-lg flex justify-around flex-wrap border border-color_carne rounded-t-lg ">
         <a href="../pages/Productos.html" class="py-2.5 m-2 px-10 border border-border_rose rounded-lg hover:bg-color_carne hover:text-bag_white">PRODUCTOS</a>
         <a href="" class="py-2.5 px-10 m-2 border border-border_rose hover:bg-color_carne bg-color_carne text-bag_white rounded-lg">INVENTARIO</a>
         <a href="../pages/historial.html" class="py-2.5 px-10 m-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">HISTORIAL DE PEDIDOS</a>
+      </div> -->
+
+      <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
+        <a href="../pages/Productos.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white ">PRODUCTOS</a>
+        <a href="" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:bg-bag_white max-md:border-bag_white">INVENTARIO</a>
+        <a href="../pages/historial.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">HISTORIAL DE PEDIDOS</a>
     </div>
+      
       <div class="p-5 text-center text-lg border flex border-color_carne  max-md:flex-wrap">
         <h1 class="text-4xl m-2">INVENTARIO</h1>
         <div class="flex justify-start w-full ">
@@ -31,6 +43,8 @@
         </div>
       </div>
 
+
+
       <div class="modal fixed inset-x-0 inset-y-0 flex hidden">
         <div class="modal_container w-5/6 m-auto max-w-2xl max-h-full  rounded-lg bg-gris flex items-center flex-col">
           <div class="flex justify-between items-center w-full bg-color_carne rounded-t-lg">
@@ -38,7 +52,7 @@
             <button class="p-2 m-2 hover:bg-bag_white hover:text-bag_black text-bag_white rounded-lg" id="cerrar">X</button>
           </div>
           <div class="formulario p-5">
-            <form action="" id="form" method="post" >
+            <form action="#" id="form">
               
               
               <label for="" class="">ID</label>
@@ -58,7 +72,7 @@
               <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
 
               <div class="flex justify-center ">
-                <input type="submit" class=" w-3/6 m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg "></input>
+                <button class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
               </div>
     
             </form>
@@ -69,40 +83,37 @@
       </div>
 
 
-      <div class="p-2">
-        <table class="border-2 border-gris_oscuro min-w-full mt-2 text-center">
-          <thead>
-            <tr class="border-2 border-gris_claro">
-              <th class="border-2 border-gris_claro">No</th>
-              <th class="border-2 border-gris_claro">nombre</th>
-              <th>correo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border-2 border-gris_claro">1</td>
-              <td class="border-2 border-gris_claro">carlos</td>
-              <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-            </tr>
-        
-            <tr>
-              <td class="border-2 border-gris_claro">1</td>
-              <td class="border-2 border-gris_claro">carlos</td>
-              <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-            </tr>
-        
-            <tr>
-              <td class="border-2 border-gris_claro">1</td>
-              <td class="border-2 border-gris_claro">carlos</td>
-              <td class="border-2 border-gris_claro">carlos@gmail.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
+
+      <div class="bg-white p-6  max-w-screen mx-auto">
+        <div class="p-2 max-h-96 overflow-y-scroll">
+            <table class=" border-collapse w-full text-center">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-3 border border-gray-300">ID</th>
+                        <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
+                        <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
+                        <th class="p-3 border border-gray-300">PESO EN GRAMOS</th>
+                        <th class="p-3 border border-gray-300">PRECIO TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300">1</td>
+                        <td class="p-3 border border-gray-300">Carlos</td>
+                        <td class="p-3 border border-gray-300">carlos@gmail.com</td>
+                        <td class="p-3 border border-gray-300">20.000</td>
+                        <td class="p-3 border border-gray-300">50.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
       
     </article>
   </section>
   <script src="../scripts/agregar.js"></script>
+  <script src="../scripts/menu.js"></script>
 </body>
 
 </html>

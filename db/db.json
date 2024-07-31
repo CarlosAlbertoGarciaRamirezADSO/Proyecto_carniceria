@@ -1,19 +1,62 @@
 {
-    "Users": [
-    { 
-        "id_rol": 1, 
-        "usuario": "superadmin", 
-        "contraseña": "123" 
+  "Users": [
+    {
+      "id_rol": 1,
+      "usuario": "superadmin",
+      "contraseña": "123",
+      "id": "6258"
     },
-    { 
-        "id_rol": 2, 
-        "usuario": "admin", 
-        "contraseña": "123" 
-    },{ 
-        "id_rol": 3, 
-        "usuario": "empleado", 
-        "contraseña": "123" 
+    {
+      "id_rol": 2,
+      "usuario": "admin",
+      "contraseña": "123",
+      "id": "07a8"
+    },
+    {
+      "id_rol": 3,
+      "usuario": "empleado",
+      "contraseña": "123",
+      "id": "937e"
+    },
+    {
+      "id": "53fe",
+      "correo": "carlos@gmail.com",
+      "contraseña": "carlos"
+    },
+    {
+      "id": "100a",
+      "correo": "carlosgarciaramirez23@hotmail.com",
+      "contraseña": "Carlos23"
+    },
+    {
+      "id": "897e",
+      "correo": "carlosgarciaramirez23@hotmail.com",
+      "contraseña": "carlos2323"
+    },
+    {
+      "id": "5efd",
+      "correo": "",
+      "contraseña": "CArlos23"
+    },
+    {
+      "id": "3ef0",
+      "correo": "carlosgarciaramirez23@hotmail.com",
+      "contraseña": ""
+    },
+    {
+      "id": "2432",
+      "correo": "carlosgarciaramirez23@hotmail.com",
+      "contraseña": ""
+    },
+    {
+      "id": "8215",
+      "correo": "carlosgarciaramirez23@hotmail.com",
+      "contraseña": "Carlos23"
+    },
+    {
+      "id": "4e07",
+      "correo": "carlosgarciaramirez23@hotmail.com",
+      "contraseña": "Carlos23"
     }
-    ]
-
+  ]
 }

@@ -1,4 +1,3 @@
-
     const dom = document;
     const correo = dom.querySelector("#correo");
     const contraseña1 = dom.querySelector("#contraseña1");
@@ -36,7 +35,7 @@
         }
     };
     
-    const validarContraseñasCoinciden = (contraseña1, contraseña2) => {
+    const coinciden = (contraseña1, contraseña2) => {
         if (contraseña1.value === contraseña2.value) {
                 bien(contraseña2);
                 return true; 
@@ -46,31 +45,29 @@
         }
     };
     
-    const validarFormulario = () => {
+    const validarformulario = () => {
         let validarform = 1; 
     
         const correo_bien = validarcorreo(correo);
         const contraseña1_bien = validarcontraseña(contraseña1);
         const contraseña2_bien = validarcontraseña(contraseña2);
-        const coincide = validarContraseñasCoinciden(contraseña1, contraseña2);
+        const coincide = coinciden(contraseña1, contraseña2);
 
         if (!correo_bien || !contraseña1_bien || !contraseña2_bien || !coincide) {
             validarform = 0;
         }
-    
         return validarform; 
     };
     
 
     const enviarFormulario = (event) => {
         event.preventDefault();
-        const formValido = validarFormulario(); 
-        if (formValido ==1) {
+        const formulario_valido = validarformulario(); 
+        if (formulario_valido == 1) {
             const data = {
                 correo: correo.value,
                 contraseña: contraseña1.value
             };
-
             fetch('http://localhost:3000/Users', {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -95,5 +92,5 @@
     formulario.addEventListener('submit', enviarFormulario);
     correo.addEventListener("blur", () => validarcorreo(correo));
     contraseña1.addEventListener("blur", () => validarcontraseña(contraseña1));
-    contraseña2.addEventListener("blur", () => validarContraseñasCoinciden(contraseña1, contraseña2));
+    contraseña2.addEventListener("blur", () => coinciden(contraseña1, contraseña2));
 

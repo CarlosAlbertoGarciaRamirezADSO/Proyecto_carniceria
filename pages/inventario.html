@@ -21,12 +21,7 @@
 </header>
   <section class=" flex min-h-screen  bg-color_fondo p-3">
     <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full">
-      
-      <!-- <div class="p-5 text-center text-lg flex justify-around flex-wrap border border-color_carne rounded-t-lg ">
-        <a href="../pages/Productos.html" class="py-2.5 m-2 px-10 border border-border_rose rounded-lg hover:bg-color_carne hover:text-bag_white">PRODUCTOS</a>
-        <a href="" class="py-2.5 px-10 m-2 border border-border_rose hover:bg-color_carne bg-color_carne text-bag_white rounded-lg">INVENTARIO</a>
-        <a href="../pages/historial.html" class="py-2.5 px-10 m-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">HISTORIAL DE PEDIDOS</a>
-      </div> -->
+
 
       <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
         <a href="../pages/Productos.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white ">PRODUCTOS</a>
@@ -51,28 +46,29 @@
             <h1 class="text-3xl text-bag_white ">Agregar</h1>
             <button class="p-2 m-2 hover:bg-bag_white hover:text-bag_black text-bag_white rounded-lg" id="cerrar">X</button>
           </div>
+
           <div class="formulario p-5">
-            <form action="#" id="form">
+            <form action="#" id="form_modal" novalidate>
               
               
               <label for="" class="">ID</label>
-              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+              <input id="input_id" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
     
               <label for="" class="">NOMBRE</label>
-              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" >
+              <input id="input_nombre" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
     
               
               <label for="" class="">FECHA VENCIMIENTO</label>
-              <input type="date" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+              <input id="input_date" type="date" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
     
               <label for="" class="">PESO TOTAL EN GRAMOS</label>
-              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+              <input id="input_peso_gramos" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
     
               <label for="" class="">PRECIO X LIBRA</label>
-              <input type="text" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris">
+              <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
 
               <div class="flex justify-center ">
-                <button class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
+                <button id="enviar_datos_agg" class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
               </div>
     
             </form>
@@ -112,7 +108,7 @@
       
     </article>
   </section>
-  <script src="../scripts/agregar.js"></script>
+  <script src="../scripts/agregar.js" type="module"></script>
   <script src="../scripts/menu.js"></script>
 </body>
 

@@ -1,8 +1,10 @@
+import validar from "./modulo/valida_registro.js";
+
     const dom = document;
     const correo = dom.querySelector("#correo");
     const contraseña1 = dom.querySelector("#contraseña1");
     const contraseña2 = dom.querySelector("#contraseña2");
-    const formulario = dom.querySelector("#registrar_formulario");
+    const formulario = dom.querySelector("form");
 
     const bien = (elemento)=>{
         elemento.classList.add("border-green-500");
@@ -60,6 +62,27 @@
     };
     
 
+    // formulario.addEventListener("submit",(event)=>{
+    //     let response = validar(event,("form [required]"))   
+
+    //     const data = {
+    //         correo: correo.value,
+    //         contraseña: contraseña1.value
+    //     };
+    //     if(response){
+
+    //         fetch('http://localhost:3000/Users', {
+    //             method: "POST",
+    //             body: JSON.stringify(data),
+    //             headers: { "Content-type": "application/json;charset=UTF-8" }
+    //         })
+    //         .then(response => response.json())
+    //         .then(json =>{
+    //             alert("registro exito")
+    //         })
+    //     }
+    // })
+
     const enviarFormulario = (event) => {
         event.preventDefault();
         const formulario_valido = validarformulario(); 
@@ -77,7 +100,6 @@
             .then(json => {
                 alert("Registrado con éxito");
                 console.log(json);
-                formulario.reset();
             })
             .catch(err => {
                 console.log("Error:", err);

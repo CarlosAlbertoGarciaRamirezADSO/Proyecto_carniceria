@@ -2,56 +2,91 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../tailwind.config.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" />
+<!-- <link href="../output.css" rel="stylesheet"> -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../tailwind.config.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-
-  <title>Carnes San pablo</title>
+<title>Carnes San pablo</title>
 </head>
 
-<body>
-  <header class="bg-color_carne text-bag_white block text-center p-5 fixed w-full text-2xl">
-    <h1>CARNES SAN PABLO</h1>
-  </header>
+<body class="min-h-screen">
+<header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
+    <div class="md:hidden">
+        <i class='bx bx-menu' id="iconmenu"></i>
+    </div>
+    <h1 class="block">CARNES SAN PABLO</h1>
+    <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
+</header>
+<section class=" flex min-h-screen bg-color_fondo p-3">
+    <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full ">
+    
+    <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
+        <a href="../pages/Productos.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">PRODUCTOS</a>
+        <a href="../pages/inventario.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">INVENTARIO</a>
+        <a href="../pages/historial.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">HISTORIAL DE PEDIDOS</a>
+        <a href="" class="py-2.5 px-10 border border-border_rose bg-color_carne text-bag_white rounded-lg max-md:bg-bag_white max-md:text-bag_black max-md:border-bag_white">Roles</a>
+    </div>
 
-  <section class="flex items-center justify-center min-h-screen bg-color_fondo ">
-    <article class="w-full max-w-md bg-bag_white overflow-hidden rounded-lg">
-      <div class="bg-color_carne text-bag_white p-5 text-center text-lg">LOGIN ADMINISTRADOR</div>
-      <div class="p-5 w-full ">
-        <div class=" flex justify-center gap-5">
-          <!-- <button class="py-2.5 px-5 w-2/4 max-w-screen rounded-lg hover:bg-rojo_claro/80">
-            <a href="../index.html">Empleado</a>
-          </button> -->
-          <a class="py-2.5 px-5 border-color_carne hover:border w-2/4 max-w-screen rounded-lg text-center"
-            href="../index.html">Empleado</a>
-          <button class="py-2.5 px-5 border-color_carne border-b-2 w-2/4 max-w-screen ">Administrador</button>
+
+    <div class="bg-gris min-h-full ">
+        <div class="bg-white p-5 mb-2">
+            <h1 class="text-4xl font-bold text-black mb-6 text-center">Productos</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex flex-col">
+                    <label for="id1" class="mb-2 text-lg font-medium text-black">ID</label>
+                    <input type="text" id="id1" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="product-name" class="mb-2 text-lg font-medium text-black">NOMBRE PRODUCTO</label>
+                    <input type="text" id="product-name" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="id2" class="mb-2 text-lg font-medium text-black">PRECIO X LIBRA</label>
+                    <input type="text" id="id2" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="id3" class="mb-2 text-lg font-medium text-black">PESO EN GRAMOS</label>
+                    <input type="text" id="id3" class="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                </div>
+            </div>
+            <div class="w-full flex justify-center mt-6">
+                <button id="agregar" class="py-2 px-6 bg-color_carne text-white font-semibold rounded-lg ">Agregar</button>
+            </div>
         </div>
-        <form action="" class="form w-full mt-5">
-          <label for="" class="">Administrador</label>
-          <br />
-          <input type="email" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" 
-            placeholder="Ingrese su usuario" />
-
-          <br />
-          <label for="" class="">Contraseña</label>
-          <br />
-          <input type="password" class="w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris "
-            placeholder="Ingrese su contraseña" />
-
-          <div class="grid grid-rows-2 grid-cols-3">
-            <a href="recuperarpassword.html" class="hover:text-rojo_oscuro grid col-span-2">¿Olvidaste la contraseña?</a>
-            <a href="register.html" class="hover:text-rojo_oscuro grid col-start-3 text-end ">Crear usuario</a>
-            <button type="button"
-              class="grid row-start-2 col-start-2 py-2.5 px-5 bg-inter max-w-50 rounded-lg text-bag_white hover:bg-color_carne">Ingresar</button>
-          </div>
-
-        </form>
-      </div>
+        
+        
+        <div class="bg-white p-6  max-w-screen mx-auto">
+            <div class="p-2 max-h-96 overflow-y-scroll">
+                <table class=" border-collapse w-full text-center">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-3 border border-gray-300">ID</th>
+                            <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
+                            <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
+                            <th class="p-3 border border-gray-300">PESO EN GRAMOS</th>
+                            <th class="p-3 border border-gray-300">PRECIO TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white hover:bg-gray-100">
+                            <td class="p-3 border border-gray-300">1</td>
+                            <td class="p-3 border border-gray-300">Carlos</td>
+                            <td class="p-3 border border-gray-300">carlos@gmail.com</td>
+                            <td class="p-3 border border-gray-300">20.000</td>
+                            <td class="p-3 border border-gray-300">50.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+    </div>
     </article>
-  </section>
+</section>
+<script src="../scripts/menu.js"></script>
 </body>
 
-</html>
+</html> 

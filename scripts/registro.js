@@ -62,56 +62,56 @@ import validar from "./modulo/valida_registro.js";
     };
     
 
-    // formulario.addEventListener("submit",(event)=>{
-    //     let response = validar(event,("form [required]"))   
+    formulario.addEventListener("submit",(event)=>{
+        let response = validar(event,("form [required]"))   
 
-    //     const data = {
-    //         correo: correo.value,
-    //         contraseña: contraseña1.value
-    //     };
-    //     if(response){
+        const data = {
+            correo: correo.value,
+            contraseña: contraseña1.value
+        };
+        if(response){
 
-    //         fetch('http://localhost:3000/Users', {
-    //             method: "POST",
-    //             body: JSON.stringify(data),
-    //             headers: { "Content-type": "application/json;charset=UTF-8" }
-    //         })
-    //         .then(response => response.json())
-    //         .then(json =>{
-    //             alert("registro exito")
-    //         })
-    //     }
-    // })
-
-    const enviarFormulario = (event) => {
-        event.preventDefault();
-        const formulario_valido = validarformulario(); 
-        if (formulario_valido == 1) {
-            const data = {
-                correo: correo.value,
-                contraseña: contraseña1.value
-            };
             fetch('http://localhost:3000/Users', {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: { "Content-type": "application/json;charset=UTF-8" }
             })
             .then(response => response.json())
-            .then(json => {
-                alert("Registrado con éxito");
-                console.log(json);
+            .then(json =>{
+                alert("registro exito")
             })
-            .catch(err => {
-                console.log("Error:", err);
-                alert("No se registró");
-            });
         }
-        else{
-            alert("no se pudo registrar")
-        }
-    };
+    })
 
-    formulario.addEventListener('submit', enviarFormulario);
+    // const enviarFormulario = (event) => {
+    //     event.preventDefault();
+    //     const formulario_valido = validarformulario(); 
+    //     if (formulario_valido == 1) {
+    //         const data = {
+    //             correo: correo.value,
+    //             contraseña: contraseña1.value
+    //         };
+    //         fetch('http://localhost:3000/Users', {
+    //             method: "POST",
+    //             body: JSON.stringify(data),
+    //             headers: { "Content-type": "application/json;charset=UTF-8" }
+    //         })
+    //         .then(response => response.json())
+    //         .then(json => {
+    //             alert("Registrado con éxito");
+    //             console.log(json);
+    //         })
+    //         .catch(err => {
+    //             console.log("Error:", err);
+    //             alert("No se registró");
+    //         });
+    //     }
+    //     else{
+    //         alert("no se pudo registrar")
+    //     }
+    // };
+
+    // formulario.addEventListener('submit', enviarFormulario);
     correo.addEventListener("blur", () => validarcorreo(correo));
     contraseña1.addEventListener("blur", () => validarcontraseña(contraseña1));
     contraseña2.addEventListener("blur", () => coinciden(contraseña1, contraseña2));

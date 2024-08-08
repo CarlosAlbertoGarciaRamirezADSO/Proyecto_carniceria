@@ -5,6 +5,7 @@ const validar = (evento, formulario)=>{
     elementos.forEach(elemento => {
         if(elemento.value ===""){
             bandera = false
+
         }
     });
     return true

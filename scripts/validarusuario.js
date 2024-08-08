@@ -17,7 +17,7 @@ const validaruser = (event) => {
             const usuario = users.find(user => user.correo === data.correo && user.contraseña === data.contraseña);
             if (usuario) {
                 alert("Inicio de sesión");
-                window.location.href = "../pages/Productos.html";
+                    window.location.href = "../pages/Productos.html";
             } else {
                 alert("Usuario o contraseña incorrectos");
             }

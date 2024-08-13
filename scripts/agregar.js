@@ -41,7 +41,9 @@ const save = async (event) => {
     console.log("Datos a enviar:", data); // Verifica los datos que se están enviando
 
     if (ok) {
-        if (oculto.value === '') {
+        if (oculto.value === '' && validar_fecha(event, input_fechavencimiento) === true) {
+            console.log("1");
+            
             try {
                 const response = await enviar("productos", {
                     method: "POST",
@@ -59,20 +61,25 @@ const save = async (event) => {
                 console.error("Error al enviar los datos:", error);
                 alert("Ocurrió un error al enviar los datos.");
             } 
-        }else {
-            // Actualizamos los datos
-            data.id = oculto.value;
-            enviar(`productos/${oculto.value}`, {
-                method: "PUT",
-                body: JSON.stringify(data),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8",
-                },
-                }).then((data) => {
-                resetForm();
-                editRow(data);
-                alert(`Usuario actualizado con éxtio`);
-                });
+        }
+        else {
+            if (validar_fecha(event, input_fechavencimiento) === true) {
+            console.log("2");
+                // Actualizamos los datos
+                data.id = oculto.value;
+                enviar(`productos/${oculto.value}`, {
+                    method: "PUT",
+                    body: JSON.stringify(data),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                    },
+                    }).then((data) => {
+                    // resetForm();
+                    // modalmostrar()
+                    editRow(data);
+                    alert(`Usuario actualizado con éxtio`);
+                    });        
+                }
             }
         }
     };

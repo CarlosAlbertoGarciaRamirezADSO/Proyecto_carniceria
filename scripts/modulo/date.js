@@ -7,11 +7,15 @@ const validar_fecha = (event, elemento) => {
     if (fecha_input >= fecha_hoy) {
         elemento.classList.add("border-green-500", "border-2");
         elemento.classList.remove("border-red-500", "border-2");
+        return true;
+        
     } else {
+        event.preventDefault();
         elemento.classList.remove("border-green-500", "border-2");
         elemento.classList.add("border-red-500", "border-2");
-        event.preventDefault();
-    }
-}
+        return false;
 
+    }
+    // return validar_fh
+}
 export default validar_fecha;

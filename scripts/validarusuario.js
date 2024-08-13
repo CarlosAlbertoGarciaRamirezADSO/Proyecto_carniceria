@@ -15,11 +15,24 @@ const validaruser = (event) => {
         .then(response => response.json())
         .then(users => {
             const usuario = users.find(user => user.correo === data.correo && user.contraseña === data.contraseña);
-            if (usuario) {
-                alert("Inicio de sesión");
-                    window.location.href = "../pages/Productos.html";
-            } else {
-                alert("Usuario o contraseña incorrectos");
+            const rol = users.rol;
+            // const usuarioactivo = localStorage.setItem(usuario);
+            // console.log(usuarioactivo);
+            
+            console.log(usuario);
+            
+            localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+
+            if (usuario.rol == '1') {
+                alert("Inicio de sesión administration");
+                    // window.location.href = "../pages/administrador.html";
+            }else if (usuario.rol == '2') {
+                    alert("Inicio de sesión empleado");
+                    // window.location.href = "../index.html";
+            }
+            else if (usuario.rol == '3') {
+                alert("Inicio de sesión pendiente");
+                    window.location.href = "../index.html";
             }
         })
         .catch(err => {

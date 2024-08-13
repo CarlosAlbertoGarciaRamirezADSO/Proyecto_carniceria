@@ -5,7 +5,6 @@ PRIMERO TIENE QUE CREAR UN ARCHIVO LLAMADO DB.JSON Y PONER EL SIGUIENTE CODIGO
 ```
 {
   "Users": [
-    
   ],
   "roles": [
     {
@@ -20,6 +19,9 @@ PRIMERO TIENE QUE CREAR UN ARCHIVO LLAMADO DB.JSON Y PONER EL SIGUIENTE CODIGO
       "id": "3",
       "rol": "Pendiente"
     }
+  ],
+  "productos": [
+  
   ]
 }
 ```

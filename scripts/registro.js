@@ -68,7 +68,7 @@ import validar from "./modulo/valida_registro.js";
             const data = {
                 correo: correo.value,
                 contraseña: contraseña1.value,
-                rol: ""
+                rol: "3"
                 
             };
             fetch('http://localhost:3000/Users', {

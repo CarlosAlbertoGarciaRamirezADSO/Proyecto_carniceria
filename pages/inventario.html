@@ -33,8 +33,8 @@
         <h1 class="text-4xl m-2">INVENTARIO</h1>
         <div class="flex justify-start w-full ">
           <button id="agregar" class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">agregar</button>
-          <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">eliminar</button>
-          <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">modificar</button>
+          <!-- <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">eliminar</button>
+          <button class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">modificar</button> -->
         </div>
       </div>
 
@@ -67,6 +67,8 @@
               <label for="" class="">PRECIO X LIBRA</label>
               <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
 
+              <input type="text" id="user_oculto" hidden>
+
               <div class="flex justify-center ">
                 <button id="enviar_datos_agg" class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
               </div>
@@ -83,7 +85,7 @@
 
       <div class="bg-white p-6  max-w-screen mx-auto">
         <div class="p-2 max-h-96 overflow-y-scroll">
-            <table class=" border-collapse w-full text-center">
+            <table class=" border-collapse w-full text-center" id="table">
                 <thead>
                     <tr class="bg-gray-200">
                         <th class="p-3 border border-gray-300">ID</th>
@@ -91,25 +93,43 @@
                         <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
                         <th class="p-3 border border-gray-300">PESO EN GRAMOS</th>
                         <th class="p-3 border border-gray-300">PRECIO TOTAL</th>
+                        <th class="p-3 border border-gray-300"></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="bg-white hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">1</td>
-                        <td class="p-3 border border-gray-300">Carlos</td>
-                        <td class="p-3 border border-gray-300">carlos@gmail.com</td>
-                        <td class="p-3 border border-gray-300">20.000</td>
-                        <td class="p-3 border border-gray-300">50.000</td>
-                    </tr>
-                </tbody>
+                <tbody id="tbody"></tbody>
             </table>
         </div>
+
+
+        <template id="users">
+          <tr>
+            <td class="id_producto p-3 border border-gray-300"></td>
+            <td class="nombre_producto p-3 border border-gray-300"></td>
+            <td class="vencimiento p-3 border border-gray-300"></td>
+            <td class="peso_producto p-3 border border-gray-300"></td>
+            <td class="precioXlibra p-3 border border-gray-300"></td>
+            <td class="p-3 border border-gray-300">
+
+              <div class="group">
+                <button class="edit button text-green-500 text-2xl">
+                  <i class='bx bxs-edit-alt '></i>
+                </button>
+                <button class="delete text-red-500 text-2xl">
+                  <i class='bx bxs-trash'></i>
+                </button>
+              </div>
+
+            </td>
+          </tr>
+        </template>
     </div>
       
     </article>
   </section>
   <script src="../scripts/agregar.js" type="module"></script>
-  <script src="../scripts/menu.js"></script>
+  <script src="../scripts/menu.js" ></script>
+  <script src="../scripts/listar_inventario.js" type="module"></script>
+  <!-- <script src="../scripts/modulo/letters.js"></script> -->
 </body>
 
 </html>

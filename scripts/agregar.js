@@ -4,6 +4,8 @@ import numbers  from "./modulo/numbers.js";
 import validar_fecha  from "./modulo/date.js";
 import createRow  from "./crear_row.js";
 import solicitud,{enviar}  from "./modulo/ajax.js";
+import edit from "./editar_p.js";
+import deleteData from "./delete_p.js";
 const dom = document;
 
 const modal = dom.querySelector(".modal");
@@ -39,25 +41,41 @@ const save = async (event) => {
     console.log("Datos a enviar:", data); // Verifica los datos que se están enviando
 
     if (ok) {
-        try {
-            const response = await enviar("productos", {
-                method: "POST",
+        if (oculto.value === '') {
+            try {
+                const response = await enviar("productos", {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                    },
+                });
+    
+                console.log("Respuesta del servidor:", response); // Verifica la respuesta
+                alert(`Producto creado con éxito`);
+                resetForm();
+                createRow(response)
+            } catch (error) {
+                console.error("Error al enviar los datos:", error);
+                alert("Ocurrió un error al enviar los datos.");
+            } 
+        }else {
+            // Actualizamos los datos
+            data.id = oculto.value;
+            enviar(`productos/${oculto.value}`, {
+                method: "PUT",
                 body: JSON.stringify(data),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
                 },
-            });
-
-            console.log("Respuesta del servidor:", response); // Verifica la respuesta
-            alert(`Producto creado con éxito`);
-            resetForm();
-            createRow(data)
-        } catch (error) {
-            console.error("Error al enviar los datos:", error);
-            alert("Ocurrió un error al enviar los datos.");
+                }).then((data) => {
+                resetForm();
+                editRow(data);
+                alert(`Usuario actualizado con éxtio`);
+                });
+            }
         }
-    }
-};
+    };
 
 const resetForm = () => {
     input_id.classList.remove("border-green-500", "border-2");
@@ -73,6 +91,39 @@ const resetForm = () => {
     input_peso.value = ''
     input_precioXLibra.value = '';
 }
+
+
+const editRow = (data) => {
+    const {
+    id,
+    id_producto,
+    nombre_p,
+    vencimiento,
+    peso,
+    precio,
+} = data
+
+    const tr = document.querySelector(`#user_${id}`);  
+    tr.querySelector(".id_producto").textContent = id_producto;  
+    tr.querySelector(".nombre_producto").textContent = nombre_p;
+    tr.querySelector(".vencimiento").textContent = vencimiento;
+    tr.querySelector(".peso_producto").textContent = peso;
+    tr.querySelector(".precioXlibra").textContent = precio;
+}
+
+document.addEventListener("click", (e) => {
+    let element = "";
+    if (e.target.matches(".edit") || e.target.matches(".edit *")) {
+    element = e.target.matches(".edit") ? e.target : e.target.parentNode;
+    edit(e, element);
+    modalmostrar()
+    }
+    if (e.target.matches(".delete") || e.target.matches(".delete *")) {
+    element = e.target.matches(".delete") ? e.target : e.target.parentNode;
+    deleteData(e, element);
+    }
+});
+
 
 
 let modalmostrar = ()=>{

@@ -32,3 +32,4 @@ const listar = async () => {
 document.addEventListener("DOMContentLoaded", () => {
     listar(); // Llama a la función listar al cargar la página
 });
+

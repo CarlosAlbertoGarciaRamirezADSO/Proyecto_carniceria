@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../tailwind.config.js"></script>
   <title>Carnes San pablo</title>
@@ -67,7 +66,7 @@
               <label for="" class="">PRECIO X LIBRA</label>
               <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
 
-              <input type="text" id="user_oculto" hidden>
+              <input type="text" id="user_oculto" >
 
               <div class="flex justify-center ">
                 <button id="enviar_datos_agg" class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
@@ -90,9 +89,9 @@
                     <tr class="bg-gray-200">
                         <th class="p-3 border border-gray-300">ID</th>
                         <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
+                        <th class="p-3 border border-gray-300">FECHA VENCIMIENTO</th>
                         <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
-                        <th class="p-3 border border-gray-300">PESO EN GRAMOS</th>
-                        <th class="p-3 border border-gray-300">PRECIO TOTAL</th>
+                        <th class="p-3 border border-gray-300">STOCK</th>
                         <th class="p-3 border border-gray-300"></th>
                     </tr>
                 </thead>
@@ -129,7 +128,6 @@
   <script src="../scripts/agregar.js" type="module"></script>
   <script src="../scripts/menu.js" ></script>
   <script src="../scripts/listar_inventario.js" type="module"></script>
-  <!-- <script src="../scripts/modulo/letters.js"></script> -->
 </body>
 
 </html>

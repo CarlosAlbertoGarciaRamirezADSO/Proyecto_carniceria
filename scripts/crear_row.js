@@ -2,7 +2,9 @@
 const tbody = document.querySelector("#tbody");
 
 const createRow = (data) => {
-
+    console.log(data);
+    console.log(data.id);
+    
     const tr = tbody.insertRow(-1);  
     const tdId = tr.insertCell(0);
     const tdNombre = tr.insertCell(1);

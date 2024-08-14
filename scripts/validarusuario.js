@@ -25,7 +25,8 @@ const validaruser = (event) => {
 
             if (usuario.rol == '1') {
                 alert("Inicio de sesión administration");
-                    // window.location.href = "../pages/administrador.html";
+                    //window.location.href = "../pages/administrador.html";
+                    window.location.href = "../pages/Productos.html";
             }else if (usuario.rol == '2') {
                     alert("Inicio de sesión empleado");
                     // window.location.href = "../index.html";

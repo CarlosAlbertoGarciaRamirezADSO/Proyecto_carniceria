@@ -45,25 +45,27 @@
             <button class="p-2 m-2 hover:bg-bag_white hover:text-bag_black text-bag_white rounded-lg" id="cerrar">X</button>
           </div>
 
-          <div class="formulario p-5">
+          <div class="formulario p-5 w-full">
             <form action="#" id="form_modal" novalidate>
               
+              <div>
+                <label for="" class="">ID</label>
+                <input id="input_id" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
+              </div>
+
               
-              <label for="" class="">ID</label>
-              <input id="input_id" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
-    
               <label for="" class="">NOMBRE</label>
               <input id="input_nombre" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
     
+              <div>
+                <label for="" class="">PESO TOTAL EN GRAMOS</label>
+                <input id="input_peso_gramos" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+              </div>
               
-              <label for="" class="">FECHA VENCIMIENTO</label>
-              <input id="input_date" type="date" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
-    
-              <label for="" class="">PESO TOTAL EN GRAMOS</label>
-              <input id="input_peso_gramos" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
-    
-              <label for="" class="">PRECIO X LIBRA</label>
-              <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+              <div>
+                <label for="" class="">PRECIO X LIBRA</label>
+                <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+              </div>
 
               <input type="text" id="user_oculto" >
 
@@ -85,7 +87,6 @@
                     <tr class="bg-gray-200">
                         <th class="p-3 border border-gray-300">ID</th>
                         <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
-                        <th class="p-3 border border-gray-300">FECHA VENCIMIENTO</th>
                         <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
                         <th class="p-3 border border-gray-300">STOCK</th>
                         <th class="p-3 border border-gray-300"></th>
@@ -100,7 +101,6 @@
           <tr>
             <td class="id_producto p-3 border border-gray-300"></td>
             <td class="nombre_producto p-3 border border-gray-300"></td>
-            <td class="vencimiento p-3 border border-gray-300"></td>
             <td class="peso_producto p-3 border border-gray-300"></td>
             <td class="precioXlibra p-3 border border-gray-300"></td>
             

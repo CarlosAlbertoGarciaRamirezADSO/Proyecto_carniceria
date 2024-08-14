@@ -8,21 +8,19 @@ const createRow = (data) => {
     const tr = tbody.insertRow(-1);  
     const tdId = tr.insertCell(0);
     const tdNombre = tr.insertCell(1);
-    const tdVencimiento = tr.insertCell(2);
-    const td_peso_producto = tr.insertCell(3);
-    const tdPrecioXlibra = tr.insertCell(4);
-    const tdbotonera = tr.insertCell(5);
+    const td_peso_producto = tr.insertCell(2);
+    const tdPrecioXlibra = tr.insertCell(3);
+    const tdbotonera = tr.insertCell(4);
 
     tdId.classList.add("id_producto", "p-3", "border", "border-gray-300");
     tdNombre.classList.add("nombre_producto", "p-3", "border", "border-gray-300");
-    tdVencimiento.classList.add("vencimiento", "p-3", "border", "border-gray-300");
+
     td_peso_producto.classList.add("peso_producto", "p-3", "border", "border-gray-300");
     tdPrecioXlibra.classList.add("p-3", "border", "border-gray-300");
     tdbotonera.classList.add("p-3", "border", "border-gray-300");
     
     tdId.textContent = data.id_producto;
     tdNombre.textContent = data.nombre_p;
-    tdVencimiento.textContent = data.vencimiento;
     td_peso_producto.textContent = data.peso;
     tdPrecioXlibra.textContent = data.precio;
 

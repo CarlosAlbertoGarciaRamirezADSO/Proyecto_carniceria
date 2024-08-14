@@ -1,7 +1,7 @@
 import { required } from "./modulo/valida_modal.js";
 import letters  from "./modulo/letters.js";
 import numbers  from "./modulo/numbers.js";
-import validar_fecha  from "./modulo/date.js";
+
 import createRow  from "./crear_row.js";
 import solicitud,{enviar}  from "./modulo/ajax.js";
 import edit from "./editar_p.js";
@@ -17,7 +17,7 @@ const formulario = dom.querySelector("#form_modal")
 const oculto = dom.querySelector("#user_oculto")
 const input_id = dom.querySelector('#input_id');
 const input_nombre = dom.querySelector('#input_nombre');
-const input_fechavencimiento = dom.querySelector('#input_date');
+
 const input_peso = dom.querySelector('#input_peso_gramos');
 const input_precioXLibra = dom.querySelector('#input_precio_libra');
 const boton_agregar_pd = dom.querySelector("#enviar_datos_agg")
@@ -33,7 +33,7 @@ const save = async (event) => {
     const data = {
         id_producto: input_id.value.trim(),
         nombre_p: input_nombre.value.trim(),
-        vencimiento: input_fechavencimiento.value.trim(),
+
         peso: input_peso.value,
         precio: input_precioXLibra.value,
     };
@@ -41,7 +41,7 @@ const save = async (event) => {
     console.log("Datos a enviar:", data); // Verifica los datos que se están enviando
 
     if (ok) {
-        if (oculto.value === '' && validar_fecha(event, input_fechavencimiento) === true) {
+        if (oculto.value === '') {
             console.log("1");
             
             try {
@@ -63,7 +63,6 @@ const save = async (event) => {
             } 
         }
         else {
-            if (validar_fecha(event, input_fechavencimiento) === true) {
             console.log("2");
                 // Actualizamos los datos
                 data.id = oculto.value;
@@ -78,8 +77,7 @@ const save = async (event) => {
                     // modalmostrar()
                     editRow(data);
                     alert(`Usuario actualizado con éxtio`);
-                    });        
-                }
+                    });
             }
         }
     };
@@ -87,14 +85,25 @@ const save = async (event) => {
 const resetForm = () => {
     input_id.classList.remove("border-green-500", "border-2");
     input_nombre.classList.remove("border-green-500", "border-2");
-    input_fechavencimiento.classList.remove("border-green-500", "border-2");
     input_peso.classList.remove("border-green-500", "border-2");
     input_precioXLibra.classList.remove("border-green-500", "border-2");
     
+    input_id.classList.remove("border-red-500", "border-2");
+    input_nombre.classList.remove("border-red-500", "border-2");
+    input_peso.classList.remove("border-red-500", "border-2");
+    input_precioXLibra.classList.remove("border-red-500", "border-2");
+
+
+    const alerta = dom.querySelectorAll(".alerts")
+    console.log(alerta);
+    
+    alerta.forEach(element => {
+        element.parentElement.removeChild(element);
+    });
+
     oculto.value = '';
     input_id.value = '';
     input_nombre.value = '';
-    input_fechavencimiento.value = '';
     input_peso.value = ''
     input_precioXLibra.value = '';
 }
@@ -105,7 +114,6 @@ const editRow = (data) => {
     id,
     id_producto,
     nombre_p,
-    vencimiento,
     peso,
     precio,
 } = data
@@ -113,7 +121,6 @@ const editRow = (data) => {
     const tr = document.querySelector(`#user_${id}`);  
     tr.querySelector(".id_producto").textContent = id_producto;  
     tr.querySelector(".nombre_producto").textContent = nombre_p;
-    tr.querySelector(".vencimiento").textContent = vencimiento;
     tr.querySelector(".peso_producto").textContent = peso;
     tr.querySelector(".precioXlibra").textContent = precio;
 }
@@ -150,9 +157,9 @@ input_nombre.addEventListener("blur",(event)=>{
     letters(event,input_nombre)
 })
 
-input_fechavencimiento.addEventListener("blur",(event)=>{
-    validar_fecha(event,input_fechavencimiento)
-})
+// input_fechavencimiento.addEventListener("blur",(event)=>{
+//     validar_fecha(event,input_fechavencimiento)
+// })
 
 input_peso.addEventListener("keypress",(event)=>{
     numbers(event,input_peso)

@@ -15,7 +15,6 @@ const listar = async () => {
     $template.querySelector("tr").id = `user_${element.id}`;
     $template.querySelector(".id_producto").textContent = element.id_producto;
     $template.querySelector(".nombre_producto").textContent = element.nombre_p;
-    $template.querySelector(".vencimiento").textContent = element.vencimiento;
     $template.querySelector(".peso_producto").textContent = element.peso;
     $template.querySelector(".precioXlibra").textContent = element.precio;
 

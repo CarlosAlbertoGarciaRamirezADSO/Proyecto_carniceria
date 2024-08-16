@@ -21,11 +21,6 @@
 
 <section class=" flex min-h-screen  bg-color_fondo p-3">
     <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full">
-    <!-- <div class="p-5 text-center text-lg flex justify-around flex-wrap border border-color_carne rounded-t-lg ">
-        <a href="../pages/Productos.html" class="py-2.5 m-2 px-10 border border-border_rose rounded-lg hover:bg-color_carne hover:text-bag_white">PRODUCTOS</a>
-        <a href="../pages/inventario.html" class="py-2.5 px-10 m-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg">INVENTARIO</a>
-        <a href="" class="py-2.5 px-10 m-2 border border-border_rose bg-color_carne text-bag_white rounded-lg">HISTORIAL DE PEDIDOS</a>
-    </div> -->
     
     <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
         <a href="../pages/Productos.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white ">PRODUCTOS</a>
@@ -38,71 +33,46 @@
             <table class="border-collapse w-full text-center shadow-lg">
                 <thead>
                     <tr class="bg-gray-200">
-                        <th class="p-3 border border-gray-300">No</th>
-                        <th class="p-3 border border-gray-300">Nombre</th>
-                        <th class="p-3 border border-gray-300">Correo</th>
-                        <th class="p-3 border border-gray-300">Factura</th>
+                        <th class="p-3 border border-gray-300">ID VENTA</th>
+                        <th class="p-3 border border-gray-300">TOTAL DE LA FACTURA</th>
+                        <th class="p-3 border border-gray-300">VER</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="bg-white hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">1</td>
-                        <td class="p-3 border border-gray-300">Carlos</td>
-                        <td class="p-3 border border-gray-300">carlos@gmail.com</td>
-                        <td class="p-3 border border-gray-300">
-                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-50 hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">2</td>
-                        <td class="p-3 border border-gray-300">Ana</td>
-                        <td class="p-3 border border-gray-300">ana@gmail.com</td>
-                        <td class="p-3 border border-gray-300">
-                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">3</td>
-                        <td class="p-3 border border-gray-300">Luis</td>
-                        <td class="p-3 border border-gray-300">luis@gmail.com</td>
-                        <td class="p-3 border border-gray-300">
-                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-50 hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">4</td>
-                        <td class="p-3 border border-gray-300">Marta</td>
-                        <td class="p-3 border border-gray-300">marta@gmail.com</td>
-                        <td class="p-3 border border-gray-300">
-                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">5</td>
-                        <td class="p-3 border border-gray-300">Juan</td>
-                        <td class="p-3 border border-gray-300">juan@gmail.com</td>
-                        <td class="p-3 border border-gray-300">
-                            <button class="bg-color_carne text-white rounded-lg p-2 ">Mostrar</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300">5</td>
-                        <td class="p-3 border border-gray-300">Juan</td>
-                        <td class="p-3 border border-gray-300">juan@gmail.com</td>
-                        <td class="p-3 border border-gray-300">
-                            <button class="bg-color_carne text-white rounded-lg p-2">Mostrar</button>
-                        </td>
-                    </tr>
-                    
-                </tbody>
+                <tbody id="tbody_historial"></tbody>
             </table>
         </div>
+
+        <div id="modalProductos" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+            <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                <div>
+                    <h3 class="text-2xl mb-4">Productos de la Venta</h3>
+                    <ul id="listaProductos"></ul>
+                    <button id="cerrarModal" class="mt-4 bg-red-500 text-white p-2 rounded">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    
+
+
+        <template id="historial_p">
+            <tr>
+                <td class="id_venta p-3 border border-gray-300"></td>
+                <td class="total_f p-3 border border-gray-300"></td>
+                <td class="p-3 border border-gray-300">
+                    <div class="group">
+                        <button class="mostrar button text-3xl">
+                            <i class='bx bx-menu'></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </template>
+
     </div>
-    
-    
     </article>
 </section>
 <script src="../scripts/menu.js"></script>
+<script src="../scripts/listar_historial.js" type="module"></script>
 </body>
 
 </html>

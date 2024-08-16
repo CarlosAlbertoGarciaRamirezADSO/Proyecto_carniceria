@@ -1,15 +1,27 @@
-export const required = (event) => {
-    // Captura todos los elementos requeridos en el contexto del formulario
-    const requeridos = event.target.querySelectorAll("[required]");
-    let isValid = true; // Variable para verificar la validez
-
+export const required = (formulario) => {
+    const requeridos = formulario.querySelectorAll("[required]");
+    let isValid = true;
+    console.log(requeridos);
+    
     requeridos.forEach(elemento => {
-        if (elemento.value.trim() === "") { // Verifica si el campo está vacío
+        console.log(elemento);
+        
+        if (elemento.value.trim() === "") {
             elemento.classList.remove("border-green-500", "border-2");
             elemento.classList.add("border-red-500", "border-2");
-            isValid = false; // Cambia a false si hay un campo vacío
+            isValid = false;
+        } else {
+            elemento.classList.remove("border-red-500", "border-2");
+            elemento.classList.add("border-green-500", "border-2");
         }
     });
 
-    return isValid; // Devuelve true si todos los campos son válidos, de lo contrario false
+    return isValid;
 };
+
+
+
+
+
+
+

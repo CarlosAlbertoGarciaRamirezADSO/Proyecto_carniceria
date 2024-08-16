@@ -53,9 +53,11 @@
                 <input id="input_id" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
               </div>
 
-              
-              <label for="" class="">NOMBRE</label>
-              <input id="input_nombre" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+              <div>
+
+                <label for="" class="">NOMBRE</label>
+                <input id="input_nombre" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+              </div>
     
               <div>
                 <label for="" class="">PESO TOTAL EN GRAMOS</label>
@@ -67,7 +69,7 @@
                 <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
               </div>
 
-              <input type="text" id="user_oculto" >
+              <input type="text" id="user_oculto" hidden >
 
               <div class="flex justify-center ">
                 <button id="enviar_datos_agg" class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
@@ -87,8 +89,8 @@
                     <tr class="bg-gray-200">
                         <th class="p-3 border border-gray-300">ID</th>
                         <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
-                        <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
                         <th class="p-3 border border-gray-300">STOCK</th>
+                        <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
                         <th class="p-3 border border-gray-300"></th>
                     </tr>
                 </thead>

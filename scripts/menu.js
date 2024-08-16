@@ -17,7 +17,7 @@ icon.addEventListener("click", noMenu)
 //Control de las secciones
 const validarSesion = () => {
     const usuarioActivo = localStorage.getItem("usuarioActivo");
-
+    
     if (!usuarioActivo) {
         // Redirigir al login si no hay sesión activa
         window.location.href = "../index.html";

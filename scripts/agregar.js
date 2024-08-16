@@ -1,35 +1,28 @@
 import { required } from "./modulo/valida_modal.js";
 import letters  from "./modulo/letters.js";
 import numbers  from "./modulo/numbers.js";
-
 import createRow  from "./crear_row.js";
 import solicitud,{enviar}  from "./modulo/ajax.js";
 import edit from "./editar_p.js";
 import deleteData from "./delete_p.js";
-const dom = document;
 
+const dom = document;
 const modal = dom.querySelector(".modal");
 const agregar = dom.querySelector("#agregar")
 const cerrar = dom.querySelector("#cerrar")
 const formulario = dom.querySelector("#form_modal")
-
-
 const oculto = dom.querySelector("#user_oculto")
 const input_id = dom.querySelector('#input_id');
 const input_nombre = dom.querySelector('#input_nombre');
-
 const input_peso = dom.querySelector('#input_peso_gramos');
 const input_precioXLibra = dom.querySelector('#input_precio_libra');
-const boton_agregar_pd = dom.querySelector("#enviar_datos_agg")
+
 
 
 const save = async (event) => {
-    event.preventDefault(); // Evita que el formulario se envíe por defecto
-    console.log("Formulario enviado"); // Verifica si se llama a la función
-
-    let ok = required(event, "form  [required]");
-    console.log("Validación exitosa:", ok);
-
+    event.preventDefault(); 
+    const formulario = document.getElementById('form_modal');
+    let ok = required(formulario);
     const data = {
         id_producto: input_id.value.trim(),
         nombre_p: input_nombre.value.trim(),
@@ -38,12 +31,9 @@ const save = async (event) => {
         precio: input_precioXLibra.value,
     };
 
-    console.log("Datos a enviar:", data); // Verifica los datos que se están enviando
 
     if (ok) {
         if (oculto.value === '') {
-            console.log("1");
-            
             try {
                 const response = await enviar("productos", {
                     method: "POST",
@@ -53,7 +43,6 @@ const save = async (event) => {
                     },
                 });
     
-                console.log("Respuesta del servidor:", response); // Verifica la respuesta
                 alert(`Producto creado con éxito`);
                 resetForm();
                 createRow(response)
@@ -63,7 +52,6 @@ const save = async (event) => {
             } 
         }
         else {
-            console.log("2");
                 // Actualizamos los datos
                 data.id = oculto.value;
                 enviar(`productos/${oculto.value}`, {
@@ -121,8 +109,8 @@ const editRow = (data) => {
     const tr = document.querySelector(`#user_${id}`);  
     tr.querySelector(".id_producto").textContent = id_producto;  
     tr.querySelector(".nombre_producto").textContent = nombre_p;
-    tr.querySelector(".peso_producto").textContent = peso;
     tr.querySelector(".precioXlibra").textContent = precio;
+    tr.querySelector(".peso_producto").textContent = peso;
 }
 
 document.addEventListener("click", (e) => {
@@ -157,9 +145,6 @@ input_nombre.addEventListener("blur",(event)=>{
     letters(event,input_nombre)
 })
 
-// input_fechavencimiento.addEventListener("blur",(event)=>{
-//     validar_fecha(event,input_fechavencimiento)
-// })
 
 input_peso.addEventListener("keypress",(event)=>{
     numbers(event,input_peso)

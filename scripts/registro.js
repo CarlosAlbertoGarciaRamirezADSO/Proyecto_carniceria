@@ -61,35 +61,52 @@ import validar from "./modulo/valida_registro.js";
         return validarform; 
     };
 
-    const enviarFormulario = (event) => {
-        event.preventDefault();
-        const formulario_valido = validarformulario(); 
-        if (formulario_valido == 1) {
-            const data = {
-                correo: correo.value,
-                contraseña: contraseña1.value,
-                rol: "3"
-                
-            };
-            fetch('http://localhost:3000/Users', {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: { "Content-type": "application/json;charset=UTF-8" }
-            })
-            .then(response => response.json())
-            .then(json => {
-                alert("Registrado con éxito");
-                console.log(json);
-            })
-            .catch(err => {
-                console.log("Error:", err);
-                alert("No se registró");
-            });
-        }
-        else{
-            alert("no se pudo registrar")
+
+    const verificarCorreoExistente = async (correo) => {
+        try {
+            const response = await fetch(`http://localhost:3000/Users?correo=${correo}`);
+            const usuarios = await response.json();
+            return usuarios.length > 0; 
+        } catch (error) {
+            console.error("Error al verificar el correo:", error);
+            return false;
         }
     };
+    
+    const enviarFormulario = async (event) => {
+        event.preventDefault();
+        const formulario_valido = validarformulario();
+        if (formulario_valido == 1) {
+            const correoExistente = await verificarCorreoExistente(correo.value);
+            if (correoExistente) {
+                alert("El correo ya está registrado. Por favor, elige otro.");
+                mal(correo); 
+            } else {
+                const data = {
+                    correo: correo.value,
+                    contraseña: contraseña1.value,
+                    rol: "3"
+                };
+                fetch('http://localhost:3000/Users', {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: { "Content-type": "application/json;charset=UTF-8" }
+                })
+                .then(response => response.json())
+                .then(json => {
+                    alert("Registrado con éxito");
+                    console.log(json);
+                })
+                .catch(err => {
+                    console.log("Error:", err);
+                    alert("No se registró");
+                });
+            }
+        } else {
+            alert("No se pudo registrar");
+        }
+    };
+    
 
     formulario.addEventListener('submit', enviarFormulario);
     correo.addEventListener("blur", () => validarcorreo(correo));

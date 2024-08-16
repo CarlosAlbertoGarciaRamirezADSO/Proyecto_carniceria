@@ -10,6 +10,14 @@ const listar_roles = async () => {
         const data = await solicitud('Users');
 
         data.forEach((element) => {
+
+            let empleado = ""
+            if (element.rol == 2) {
+                empleado = "EMPLEADO"
+            }else if (element.rol == 3) {
+                empleado = "PENDIENTE"
+            }
+
             console.log(element.rol);
             
             if (element.rol !=1) {
@@ -18,7 +26,7 @@ const listar_roles = async () => {
     
                 clone.querySelector(".nombre_usuario").textContent = element.correo;
                 clone.querySelector(".contraseña").textContent = element.contraseña;
-                clone.querySelector(".rol").textContent = element.rol;
+                clone.querySelector(".rol").textContent = empleado;
                 clone.querySelector(".tr_prin").setAttribute("data-id",`user_${element.id}`);
     
                 // Configurar los botones de editar y eliminar

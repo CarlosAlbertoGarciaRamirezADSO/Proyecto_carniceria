@@ -51,20 +51,34 @@ const save_usuario = async (event) => {
     }
 };
 
+
+const rol_texto = (rol) => {
+    switch (rol) {
+        case 1:
+            return "SUPER ADMIN";
+        case 2:
+            return "EMPLEADO";
+        case 3:
+            return "PENDIENTE";
+        default:
+            return rol;
+    }
+}
+
 const editRow = (data) => {
     const {
         id,
         correo,
         contraseña,
         rol,
-
-    } = data
-
+    } = data;
 
     const tr = document.querySelector(`.tr_prin[data-id='user_${id}']`);
     tr.querySelector(".nombre_usuario").textContent = correo;
     tr.querySelector(".contraseña").textContent = contraseña;
-    tr.querySelector(".rol").textContent = rol;
+
+    // Convierte el rol a texto antes de asignarlo
+    tr.querySelector(".rol").textContent = rol_texto(parseInt(rol, 10));
 }
 
 document.addEventListener("click", (e) => {

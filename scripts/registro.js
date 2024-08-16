@@ -38,7 +38,7 @@ import validar from "./modulo/valida_registro.js";
     };
     
     const coinciden = (contraseña1, contraseña2) => {
-        if (contraseña1.value === contraseña2.value) {
+        if (contraseña1.value === contraseña2.value && contraseña2.value !== "") {
                 bien(contraseña2);
                 return true; 
         } else {

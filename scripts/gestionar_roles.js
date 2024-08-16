@@ -2,6 +2,7 @@
 
 import solicitud, { enviar } from "./modulo/ajax.js";
 import edit from "./editar_rol.js";
+import deleteRol from "./delete_rol.js";
 
 const oculto_rol = document.querySelector("#user_oculto_edit")
 const modal = document.querySelector('.modal');
@@ -52,16 +53,16 @@ const save_usuario = async (event) => {
 
 const editRow = (data) => {
     const {
-    id,
-    correo,
-    contraseña,
-    rol,
-    
-} = data
+        id,
+        correo,
+        contraseña,
+        rol,
+
+    } = data
 
 
-const tr = document.querySelector(`.tr_prin[data-id='user_${id}']`);
-    tr.querySelector(".nombre_usuario").textContent = correo;  
+    const tr = document.querySelector(`.tr_prin[data-id='user_${id}']`);
+    tr.querySelector(".nombre_usuario").textContent = correo;
     tr.querySelector(".contraseña").textContent = contraseña;
     tr.querySelector(".rol").textContent = rol;
 }
@@ -70,15 +71,15 @@ document.addEventListener("click", (e) => {
     let element = "";
     if (e.target.matches(".edit") || e.target.matches(".edit *")) {
         element = e.target.matches(".edit") ? e.target : e.target.parentNode;
-    edit(e, element);
-    cerrarModalEditar()
+        edit(e, element);
+        cerrarModalEditar();
     }
     if (e.target.matches(".delete") || e.target.matches(".delete *")) {
-    element = e.target.matches(".delete") ? e.target : e.target.parentNode;
-    // deleteData(e, element);
+        element = e.target.matches(".delete") ? e.target : e.target.parentNode;
+        deleteRol(e, element);
     }
 });
 
 
-cerrar_modal.addEventListener("click",cerrarModalEditar)
-formulario.addEventListener("submit",save_usuario)
+cerrar_modal.addEventListener("click", cerrarModalEditar)
+formulario.addEventListener("submit", save_usuario)

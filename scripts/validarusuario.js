@@ -41,8 +41,8 @@ const validaruser = (event) => {
         .catch(err => {
             correo.classList.add("border-red-500", "border-2");
             contraseña.classList.add("border-red-500", "border-2");
-            console.log("Error:", err);
-            alert("Error");
+            // console.log("Error:", err);
+            alert("El usuario o contraseña estan incorrectas");
         });
 };
 

@@ -9,7 +9,8 @@ const deleteRol = (event, element) => {
                 "Content-type": "application/json; charset=UTF-8",
             },
         }).then((data) => {
-            alert(`El rol ${data.nombre} fue eliminado con éxito`);
+            console.log(data)
+            alert(`El rol ${data.correo} fue eliminado con éxito`);
             tr.remove();
         }).catch((error) => {
             console.error("Error al eliminar el rol:", error);

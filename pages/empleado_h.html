@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../tailwind.config.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<title>Carnes San pablo</title>
+</head>
+
+<body class="min-h-screen">
+    <header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
+        <div class="md:hidden">
+            <i class='bx bx-menu' id="iconmenu"></i>
+        </div>
+        <h1 class="block">CARNES SAN PABLO</h1>
+        <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
+    </header>
+
+<section class=" flex min-h-screen  bg-color_fondo p-3">
+    <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full">
+    
+    <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
+        <a href="../pages/empleado_v.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white ">PRODUCTOS</a>
+        <a href="../pages/empleado_i.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">INVENTARIO</a>
+        <a href="" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:bg-bag_white max-md:border-bag_white">HISTORIAL DE PEDIDOS</a>
+    </div>
+
+    <div class="bg-white p-6 shadow-lg max-w-screen mx-auto">
+        <div class="p-2 max-h-96 overflow-y-scroll">
+            <table class="border-collapse w-full text-center shadow-lg">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-3 border border-gray-300">ID VENTA</th>
+                        <th class="p-3 border border-gray-300">TOTAL DE LA FACTURA</th>
+                        <th class="p-3 border border-gray-300">VER</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_historial"></tbody>
+            </table>
+        </div>
+
+        <div id="modalProductos" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+            <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                <div>
+                    <h3 class="text-2xl mb-4">Productos de la Venta</h3>
+                    <ul id="listaProductos"></ul>
+                    <button id="cerrarModal" class="mt-4 bg-red-500 text-white p-2 rounded">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    
+
+
+        <template id="historial_p">
+            <tr>
+                <td class="id_venta p-3 border border-gray-300"></td>
+                <td class="total_f p-3 border border-gray-300"></td>
+                <td class="p-3 border border-gray-300">
+                    <div class="group">
+                        <button class="mostrar button text-3xl">
+                            <i class='bx bx-menu'></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </template>
+
+    </div>
+    </article>
+</section>
+<script src="../scripts/menu.js"></script>
+<script src="../scripts/listar_historial.js" type="module"></script>
+</body>
+
+</html>

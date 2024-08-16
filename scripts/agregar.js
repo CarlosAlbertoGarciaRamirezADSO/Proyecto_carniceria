@@ -107,6 +107,7 @@ const editRow = (data) => {
 } = data
 
     const tr = document.querySelector(`#user_${id}`);  
+    
     tr.querySelector(".id_producto").textContent = id_producto;  
     tr.querySelector(".nombre_producto").textContent = nombre_p;
     tr.querySelector(".precioXlibra").textContent = precio;

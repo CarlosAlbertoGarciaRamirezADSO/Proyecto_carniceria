@@ -24,12 +24,11 @@ const validaruser = (event) => {
             localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
 
             if (usuario.rol == '1') {
-                alert("Inicio de sesión administration");
-                    //window.location.href = "../pages/administrador.html";
-                    window.location.href = "../pages/Productos.html";
+                alert("Inicio de sesión SUPER Administration");
+                    window.location.href = "../pages/administrador_roles.html";
             }else if (usuario.rol == '2') {
                     alert("Inicio de sesión empleado");
-                    // window.location.href = "../index.html";
+                    window.location.href = "../pages/empleado_v.html";
             }
             else if (usuario.rol == '3') {
                 alert("Inicio de sesión pendiente");

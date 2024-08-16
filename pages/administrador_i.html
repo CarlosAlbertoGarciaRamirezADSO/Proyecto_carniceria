@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../tailwind.config.js"></script>
+<title>Carnes San pablo</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="min-h-screen">
+<header class="flex justify-between items-center bg-color_carne text-bag_white  text-center fixed p-2 w-full text-2xl ">
+    <div class="md:hidden">
+        <i class='bx bx-menu' id="iconmenu"></i>
+    </div>
+    <h1 class="block">CARNES SAN PABLO</h1>
+    <a href="../index.html" class="block border-bag_black bg-bag_black/70 hover:bg-bag_black hover:text-bag_white rounded-lg p-2">Salir</a>
+</header>
+
+<section class=" flex min-h-screen  bg-color_fondo p-3">
+    <article class=" w-full max-w-md mt-16 bg-bag_white overflow-hidden rounded-lg min-w-full">
+
+
+    <div id="menu" class="p-5 text-center text-lg flex justify-around border border-color_carne rounded-t-lg max-md:absolute max-md:inset-x-0 max-md:bg-rojito max-md:flex-col max-md:w-2/4 max-md:h-2/4 ">
+        <a href="" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:bg-bag_white max-md:border-bag_white">INVENTARIO</a>
+        <a href="../pages/administrador_h.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">HISTORIAL DE PEDIDOS</a>
+        <a href="../pages/administrador_roles.html" class="py-2.5 px-10 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg max-md:text-bag_white max-md:border-bag_white">ROLES</a>
+    </div>
+    
+    <div class="p-5 text-center text-lg border flex border-color_carne  max-md:flex-wrap">
+        <h1 class="text-4xl m-2">INVENTARIO</h1>
+        <div class="flex justify-start w-full ">
+        <button id="agregar" class=" m-2 p-2 border border-border_rose hover:bg-color_carne hover:text-bag_white rounded-lg ">agregar</button>
+        </div>
+    </div>
+
+
+
+    <div class="modal fixed inset-x-0 inset-y-0 flex hidden">
+        <div class="modal_container w-5/6 m-auto max-w-2xl max-h-full  rounded-lg bg-gris flex items-center flex-col">
+        <div class="flex justify-between items-center w-full bg-color_carne rounded-t-lg">
+            <h1 class="text-3xl text-bag_white ">Agregar</h1>
+            <button class="p-2 m-2 hover:bg-bag_white hover:text-bag_black text-bag_white rounded-lg" id="cerrar">X</button>
+        </div>
+
+        <div class="formulario p-5 w-full">
+            <form action="#" id="form_modal" novalidate>
+            
+            <div>
+                <label for="" class="">ID</label>
+                <input id="input_id" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
+            </div>
+
+            <div>
+
+                <label for="" class="">NOMBRE</label>
+                <input id="input_nombre" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+            </div>
+    
+            <div>
+                <label for="" class="">PESO TOTAL EN GRAMOS</label>
+                <input id="input_peso_gramos" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+            </div>
+            
+            <div>
+                <label for="" class="">PRECIO X LIBRA</label>
+                <input id="input_precio_libra" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris"required>
+            </div>
+
+            <input type="text" id="user_oculto" hidden >
+
+            <div class="flex justify-center ">
+                <button id="enviar_datos_agg" class="bg-color_carne text-white rounded-lg p-2" type="submit">Agregar</button>
+            </div>
+    
+            </form>
+    
+        </div>
+
+        </div>
+    </div>
+
+    <div class="bg-white p-6  max-w-screen mx-auto">
+        <div class="p-2 max-h-96 overflow-y-scroll">
+            <table class=" border-collapse w-full text-center" id="table">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-3 border border-gray-300">ID</th>
+                        <th class="p-3 border border-gray-300">NOMBRE PRODUCTO</th>
+                        <th class="p-3 border border-gray-300">STOCK</th>
+                        <th class="p-3 border border-gray-300">PRECIO X LIBRA</th>
+                        <th class="p-3 border border-gray-300"></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+
+
+        <template id="users">
+        <tr>
+            <td class="id_producto p-3 border border-gray-300"></td>
+            <td class="nombre_producto p-3 border border-gray-300"></td>
+            <td class="peso_producto p-3 border border-gray-300"></td>
+            <td class="precioXlibra p-3 border border-gray-300"></td>
+            
+            <td class="p-3 border border-gray-300">
+            <div class="group">
+                <button class="edit button text-green-500 text-2xl">
+                <i class='bx bxs-edit-alt '></i>
+                </button>
+                <button class="delete text-red-500 text-2xl">
+                <i class='bx bxs-trash'></i>
+                </button>
+            </div>
+
+            </td>
+        </tr>
+        </template>
+    </div>
+    
+    </article>
+</section>
+<script src="../scripts/agregar.js" type="module"></script>
+<script src="../scripts/menu.js" ></script>
+<script src="../scripts/listar_inventario.js" type="module"></script>
+</body>
+</html>

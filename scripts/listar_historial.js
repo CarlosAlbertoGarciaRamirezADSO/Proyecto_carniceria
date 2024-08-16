@@ -39,11 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 const cargaproductosmodal = async (idVenta) => {
     const data = await solicitud(`venta/${idVenta}`); // Obtiene los productos de la venta por ID
     const productos = data.productos;
     mostrarmodal(productos);
 };
+
 
 const mostrarmodal = (productos) => {
     const modal = document.getElementById('modalProductos');

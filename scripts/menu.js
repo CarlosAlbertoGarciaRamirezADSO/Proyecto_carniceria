@@ -24,6 +24,8 @@ const validarSesion = () => {
     } else {
         // Si hay sesión activa, convertir el string almacenado a un objeto
         const usuario = JSON.parse(usuarioActivo);
-        console.log(usuario.id);
+        return usuario.id;
     }
 };
+
+export default validarSesion

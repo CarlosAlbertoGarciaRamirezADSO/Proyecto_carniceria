@@ -30,32 +30,33 @@
                         <table class="border-collapse w-full text-center" id="table">
                             <thead>
                                 <tr class="bg-gray-200">
+                                    <th class="p-3 border border-gray-300">ID</th>
                                     <th class="p-3 border border-gray-300">NOMBRE</th>
                                     <th class="p-3 border border-gray-300">CONTRASEÑA</th>
                                     <th class="p-3 border border-gray-300">ROL</th>
                                     <th class="p-3 border border-gray-300">BOTONERA</th>
                                 </tr>
                             </thead>
-                            <tbody id="tbody_roles"></tbody>
+                            <tbody id="tbody_empleados"></tbody>
                         </table>
                     </div>
-                    <template id="users">
+
+                    <template id="empledos_adm">
                         <tr class="tr_prin">
+                            <td class="id_em p-3 border border-gray-300"></td>
                             <td class="nombre_usuario p-3 border border-gray-300"></td>
                             <td class="contraseña p-3 border border-gray-300"></td>
                             <td class="rol p-3 border border-gray-300"></td>
                             <td class="p-3 border border-gray-300">
                                 <div class="group">
-                                    <button class="edit button text-green-500 text-2xl">
-                                        <i class='bx bxs-edit-alt '></i>
-                                    </button>
-                                    <button class="delete text-red-500 text-2xl">
-                                        <i class='bx bxs-trash'></i>
+                                    <button class="delete text-2xl" id="detalles">
+                                        <i class='bx bx-menu'></i>
                                     </button>
                                 </div>
                             </td>
                         </tr>
                     </template>
+                    
                 </div>
             </div>
         </article>
@@ -70,18 +71,22 @@
             <div class="formulario p-5 w-full">
                 <form action="#" id="form_modal_edit" novalidate>
                     <div>
-                        <label for="edit_nombre" class="">NOMBRE</label>
-                        <input id="edit_nombre" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
+                        <label for="" class="">ID</label>
+                        <input id="id_ad_e" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
                     </div>
                     <div>
-                        <label for="edit_contraseña" class="">CONTRASEÑA</label>
-                        <input id="edit_contraseña" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
+                        <label for="" class="">NOMBRE</label>
+                        <input id="nom_ad_e" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
                     </div>
                     <div>
-                        <label for="edit_rol" class="">ROL</label>
-                        <input id="edit_rol" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
+                        <label for="" class="">CONTRASEÑA</label>
+                        <input id="pass_ad_e" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
                     </div>
-                    <input type="text" id="user_oculto_edit" >
+                    <div>
+                        <label for="" class="">ROL</label>
+                        <input id="rol_ad_e" type="text" class="focus:outline-none w-full py-2.5 px-5 rounded-lg mb-2.5 border border-gris" required>
+                    </div>
+                    <input type="text" id="user_oct" >
                     
                     <div class="flex justify-center">
                         <button id="enviar_datos_edit" class="bg-color_carne text-white rounded-lg p-2" type="submit">Guardar Cambios</button>
@@ -91,11 +96,8 @@
         </div>
     </div>
 
-
-<!-- 
-    <script src="../scripts/menu.js"></script>
-    <script src="../scripts/listar_roles.js" type="module"></script>
-    <script src="../scripts/gestionar_roles.js" type="module"></script> -->
+    <script src="../scripts/menu.js" type="module"></script>
+    <script src="../scripts/listar_empleados.js" type="module"></script>
 </body>
 </html>
 

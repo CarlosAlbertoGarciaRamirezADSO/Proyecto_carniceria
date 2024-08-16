@@ -1,5 +1,5 @@
-import { enviar } from "./modulo/ajax.js";
-
+import solicitud,{ enviar } from "./modulo/ajax.js";
+import validarSesion  from "./menu.js";
 const finalizarventa = async () => {
     const tbody = document.querySelector("#tbody_venta");
     const rows = tbody.querySelectorAll("tr");
@@ -12,6 +12,9 @@ const finalizarventa = async () => {
     let totalVenta = 0;
     const ventas = [];
 
+    // console.log(validarSesion());
+    
+    
     for (const fila of rows) {
         //selecciona el primer hijo de td y asi susecivamente
         const id_p = fila.querySelector("td:nth-child(1)").textContent.trim();
@@ -28,9 +31,13 @@ const finalizarventa = async () => {
             peso_v: peso_venta,
             precioXlibra_fk: precio_libra,
             total_producto: precio_total_pro,
-            total_factura: totalVenta
+            total_factura: totalVenta,
+            id_empleado: validarSesion()
         });
     }
+
+    console.log(ventas);
+
 
     const data = {
         productos: ventas,

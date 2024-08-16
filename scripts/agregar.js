@@ -61,8 +61,8 @@ const save = async (event) => {
                         "Content-type": "application/json; charset=UTF-8",
                     },
                     }).then((data) => {
-                    // resetForm();
-                    // modalmostrar()
+                resetForm();
+                modalmostrar()
                     editRow(data);
                     alert(`Usuario actualizado con éxtio`);
                     });

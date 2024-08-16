@@ -110,8 +110,8 @@ const editRow = (data) => {
     
     tr.querySelector(".id_producto").textContent = id_producto;  
     tr.querySelector(".nombre_producto").textContent = nombre_p;
-    tr.querySelector(".precioXlibra").textContent = precio;
     tr.querySelector(".peso_producto").textContent = peso;
+    tr.querySelector(".precioXlibra").textContent = precio;
 }
 
 document.addEventListener("click", (e) => {

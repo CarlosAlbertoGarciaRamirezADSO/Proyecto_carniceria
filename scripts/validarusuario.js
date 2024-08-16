@@ -20,7 +20,10 @@ const validaruser = (event) => {
             // console.log(usuarioactivo);
             
             console.log(usuario);
-            
+            correo.classList.add("border-green-500");
+            contraseña.classList.add("border-green-500");
+            contraseña.classList.add("border-green-500");
+
             localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
 
             if (usuario.rol == '1') {
@@ -36,6 +39,8 @@ const validaruser = (event) => {
             }
         })
         .catch(err => {
+            correo.classList.add("border-red-500", "border-2");
+            contraseña.classList.add("border-red-500", "border-2");
             console.log("Error:", err);
             alert("Error");
         });

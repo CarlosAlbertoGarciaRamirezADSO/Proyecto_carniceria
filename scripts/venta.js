@@ -61,8 +61,8 @@ peso_ingresado.addEventListener("keypress", (event) => {
 boton_agg_venta.addEventListener("click", buscar_producto);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const finalizarBtn = document.querySelector("#finalizar_venta");
-    if (finalizarBtn) {
-        finalizarBtn.addEventListener("click", finalizarventa);
+    const finalizar = document.querySelector("#finalizar_venta");
+    if (finalizar) {
+        finalizar.addEventListener("click", finalizarventa);
     }
 });

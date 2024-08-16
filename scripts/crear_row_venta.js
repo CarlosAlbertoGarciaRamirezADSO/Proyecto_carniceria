@@ -3,7 +3,6 @@ const createRow_venta = (data) => {
 
     const tr = tbody.insertRow(-1);  
     
-    // Crear celdas para la fila
     const tdId = tr.insertCell(0);
     const tdNombre = tr.insertCell(1);
     const tdPeso = tr.insertCell(2);

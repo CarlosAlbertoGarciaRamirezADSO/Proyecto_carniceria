@@ -27,7 +27,7 @@ const createRow_venta = (data) => {
     tdTotal.textContent = `${total}`;
 
     const btnDelete = document.createElement("button");
-    btnDelete.classList.add("delete", "text-red-500", "text-2xl");
+        btnDelete.classList.add("delete", "text-red-500", "text-2xl");
     btnDelete.setAttribute("data-id", data.id_producto);
     btnDelete.innerHTML = `<i class="bx bxs-trash"></i>`; 
 

@@ -46,6 +46,7 @@ const save = async (event) => {
                 alert(`Producto creado con éxito`);
                 resetForm();
                 createRow(response)
+                modalmostrar()
             } catch (error) {
                 console.error("Error al enviar los datos:", error);
                 alert("Ocurrió un error al enviar los datos.");

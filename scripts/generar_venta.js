@@ -12,7 +12,7 @@ const finalizarventa = async () => {
     let totalVenta = 0;
     const ventas = [];
 
-    // console.log(validarSesion());
+
     
     
     for (const fila of rows) {

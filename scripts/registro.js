@@ -79,7 +79,7 @@ import validar from "./modulo/valida_registro.js";
         if (formulario_valido == 1) {
             const correoExistente = await verificarCorreoExistente(correo.value);
             if (correoExistente) {
-                alert("El correo ya está registrado. Por favor, elige otro.");
+                alert("El correo ya está registrado. Por favor, elige otro");
                 mal(correo); 
             } else {
                 const data = {
